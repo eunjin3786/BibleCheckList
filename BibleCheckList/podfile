@@ -1,0 +1,6 @@
+use_frameworks!
+
+
+target 'BibleCheckList' do
+    pod 'RealmSwift'
+end
