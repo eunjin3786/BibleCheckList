@@ -1,0 +1,6 @@
+framework module Pods_BibleCheckList {
+  umbrella header "Pods-BibleCheckList-umbrella.h"
+
+  export *
+  module * { export * }
+}

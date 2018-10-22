@@ -7,21 +7,39 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		16BAED64290360CBA15C6298 /* Pods_BibleCheckList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 102D23F980CB468797CA582F /* Pods_BibleCheckList.framework */; };
 		AC648EA1217CF40D00377686 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC648EA0217CF40D00377686 /* AppDelegate.swift */; };
-		AC648EA3217CF40D00377686 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC648EA2217CF40D00377686 /* ViewController.swift */; };
 		AC648EA6217CF40D00377686 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC648EA4217CF40D00377686 /* Main.storyboard */; };
 		AC648EA8217CF41100377686 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC648EA7217CF41100377686 /* Assets.xcassets */; };
 		AC648EAB217CF41100377686 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC648EA9217CF41100377686 /* LaunchScreen.storyboard */; };
+		AC648EB4217D946B00377686 /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC648EB3217D946B00377686 /* RealmModel.swift */; };
+		ACB326AA217DC67800BBAC32 /* NanumSquareExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ACB326A6217DC67600BBAC32 /* NanumSquareExtraBold.ttf */; };
+		ACB326AB217DC67800BBAC32 /* NanumSquareLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ACB326A7217DC67600BBAC32 /* NanumSquareLight.ttf */; };
+		ACB326AC217DC67800BBAC32 /* NanumSquareBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ACB326A8217DC67700BBAC32 /* NanumSquareBold.ttf */; };
+		ACB326AD217DC67800BBAC32 /* NanumSquareRegular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ACB326A9217DC67800BBAC32 /* NanumSquareRegular.ttf */; };
+		ACB326B0217DC7A900BBAC32 /* CheckListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB326AF217DC7A900BBAC32 /* CheckListViewController.swift */; };
+		ACB326B5217DC96400BBAC32 /* CheckListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB326B3217DC96400BBAC32 /* CheckListTableViewCell.swift */; };
+		ACB326B6217DC96400BBAC32 /* CheckListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACB326B4217DC96400BBAC32 /* CheckListTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		102D23F980CB468797CA582F /* Pods_BibleCheckList.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BibleCheckList.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B88AD719E9D0D0F9210D8A5 /* Pods-BibleCheckList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BibleCheckList.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BibleCheckList/Pods-BibleCheckList.debug.xcconfig"; sourceTree = "<group>"; };
+		56E0D96AC03063F00AA2E47F /* Pods-BibleCheckList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BibleCheckList.release.xcconfig"; path = "Pods/Target Support Files/Pods-BibleCheckList/Pods-BibleCheckList.release.xcconfig"; sourceTree = "<group>"; };
 		AC648E9D217CF40D00377686 /* BibleCheckList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BibleCheckList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC648EA0217CF40D00377686 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AC648EA2217CF40D00377686 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		AC648EA5217CF40D00377686 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AC648EA7217CF41100377686 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AC648EAA217CF41100377686 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AC648EAC217CF41100377686 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AC648EB3217D946B00377686 /* RealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmModel.swift; sourceTree = "<group>"; };
+		ACB326A6217DC67600BBAC32 /* NanumSquareExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareExtraBold.ttf; sourceTree = "<group>"; };
+		ACB326A7217DC67600BBAC32 /* NanumSquareLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareLight.ttf; sourceTree = "<group>"; };
+		ACB326A8217DC67700BBAC32 /* NanumSquareBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareBold.ttf; sourceTree = "<group>"; };
+		ACB326A9217DC67800BBAC32 /* NanumSquareRegular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareRegular.ttf; sourceTree = "<group>"; };
+		ACB326AF217DC7A900BBAC32 /* CheckListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckListViewController.swift; sourceTree = "<group>"; };
+		ACB326B3217DC96400BBAC32 /* CheckListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckListTableViewCell.swift; sourceTree = "<group>"; };
+		ACB326B4217DC96400BBAC32 /* CheckListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckListTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +47,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16BAED64290360CBA15C6298 /* Pods_BibleCheckList.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A740531B796E1A95C3CD9331 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				102D23F980CB468797CA582F /* Pods_BibleCheckList.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		AC648E94217CF40D00377686 = {
 			isa = PBXGroup;
 			children = (
 				AC648E9F217CF40D00377686 /* BibleCheckList */,
 				AC648E9E217CF40D00377686 /* Products */,
+				AE3691AF70D03B6D6CB38374 /* Pods */,
+				A740531B796E1A95C3CD9331 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +83,70 @@
 		AC648E9F217CF40D00377686 /* BibleCheckList */ = {
 			isa = PBXGroup;
 			children = (
+				ACB326AE217DC77A00BBAC32 /* Controllers */,
+				ACB326A5217DC65A00BBAC32 /* Fonts */,
+				AC648EB2217D941D00377686 /* Model */,
 				AC648EA0217CF40D00377686 /* AppDelegate.swift */,
-				AC648EA2217CF40D00377686 /* ViewController.swift */,
 				AC648EA4217CF40D00377686 /* Main.storyboard */,
 				AC648EA7217CF41100377686 /* Assets.xcassets */,
 				AC648EA9217CF41100377686 /* LaunchScreen.storyboard */,
 				AC648EAC217CF41100377686 /* Info.plist */,
 			);
 			path = BibleCheckList;
+			sourceTree = "<group>";
+		};
+		AC648EB2217D941D00377686 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AC648EB3217D946B00377686 /* RealmModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		ACB326A5217DC65A00BBAC32 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				ACB326A8217DC67700BBAC32 /* NanumSquareBold.ttf */,
+				ACB326A6217DC67600BBAC32 /* NanumSquareExtraBold.ttf */,
+				ACB326A7217DC67600BBAC32 /* NanumSquareLight.ttf */,
+				ACB326A9217DC67800BBAC32 /* NanumSquareRegular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		ACB326AE217DC77A00BBAC32 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				ACB326B1217DC92E00BBAC32 /* Home */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		ACB326B1217DC92E00BBAC32 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				ACB326B2217DC93900BBAC32 /* TableViewCell */,
+				ACB326AF217DC7A900BBAC32 /* CheckListViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		ACB326B2217DC93900BBAC32 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				ACB326B3217DC96400BBAC32 /* CheckListTableViewCell.swift */,
+				ACB326B4217DC96400BBAC32 /* CheckListTableViewCell.xib */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		AE3691AF70D03B6D6CB38374 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4B88AD719E9D0D0F9210D8A5 /* Pods-BibleCheckList.debug.xcconfig */,
+				56E0D96AC03063F00AA2E47F /* Pods-BibleCheckList.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +156,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AC648EAF217CF41100377686 /* Build configuration list for PBXNativeTarget "BibleCheckList" */;
 			buildPhases = (
+				BE5FA34BF6B8A2EDDF9ABFFA /* [CP] Check Pods Manifest.lock */,
 				AC648E99217CF40D00377686 /* Sources */,
 				AC648E9A217CF40D00377686 /* Frameworks */,
 				AC648E9B217CF40D00377686 /* Resources */,
+				CA73F55B6B8E8250E88F5D10 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -122,20 +209,68 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACB326B6217DC96400BBAC32 /* CheckListTableViewCell.xib in Resources */,
 				AC648EAB217CF41100377686 /* LaunchScreen.storyboard in Resources */,
+				ACB326AB217DC67800BBAC32 /* NanumSquareLight.ttf in Resources */,
+				ACB326AA217DC67800BBAC32 /* NanumSquareExtraBold.ttf in Resources */,
+				ACB326AD217DC67800BBAC32 /* NanumSquareRegular.ttf in Resources */,
 				AC648EA8217CF41100377686 /* Assets.xcassets in Resources */,
+				ACB326AC217DC67800BBAC32 /* NanumSquareBold.ttf in Resources */,
 				AC648EA6217CF40D00377686 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		BE5FA34BF6B8A2EDDF9ABFFA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BibleCheckList-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CA73F55B6B8E8250E88F5D10 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-BibleCheckList/Pods-BibleCheckList-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BibleCheckList/Pods-BibleCheckList-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		AC648E99217CF40D00377686 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC648EA3217CF40D00377686 /* ViewController.swift in Sources */,
+				ACB326B5217DC96400BBAC32 /* CheckListTableViewCell.swift in Sources */,
+				ACB326B0217DC7A900BBAC32 /* CheckListViewController.swift in Sources */,
+				AC648EB4217D946B00377686 /* RealmModel.swift in Sources */,
 				AC648EA1217CF40D00377686 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -280,6 +415,7 @@
 		};
 		AC648EB0217CF41100377686 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4B88AD719E9D0D0F9210D8A5 /* Pods-BibleCheckList.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -298,6 +434,7 @@
 		};
 		AC648EB1217CF41100377686 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 56E0D96AC03063F00AA2E47F /* Pods-BibleCheckList.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
