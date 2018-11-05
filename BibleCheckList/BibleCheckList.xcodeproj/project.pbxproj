@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		16BAED64290360CBA15C6298 /* Pods_BibleCheckList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 102D23F980CB468797CA582F /* Pods_BibleCheckList.framework */; };
+		AC0443A421904E64000313EB /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0443A321904E64000313EB /* RealmManager.swift */; };
 		AC648EA1217CF40D00377686 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC648EA0217CF40D00377686 /* AppDelegate.swift */; };
 		AC648EA6217CF40D00377686 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC648EA4217CF40D00377686 /* Main.storyboard */; };
 		AC648EA8217CF41100377686 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC648EA7217CF41100377686 /* Assets.xcassets */; };
@@ -20,12 +21,15 @@
 		ACB326B0217DC7A900BBAC32 /* CheckListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB326AF217DC7A900BBAC32 /* CheckListViewController.swift */; };
 		ACB326B5217DC96400BBAC32 /* CheckListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB326B3217DC96400BBAC32 /* CheckListTableViewCell.swift */; };
 		ACB326B6217DC96400BBAC32 /* CheckListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACB326B4217DC96400BBAC32 /* CheckListTableViewCell.xib */; };
+		ACB326BA217DCDF800BBAC32 /* PageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB326B8217DCDF800BBAC32 /* PageCollectionViewCell.swift */; };
+		ACB326BB217DCDF800BBAC32 /* PageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACB326B9217DCDF800BBAC32 /* PageCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		102D23F980CB468797CA582F /* Pods_BibleCheckList.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BibleCheckList.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B88AD719E9D0D0F9210D8A5 /* Pods-BibleCheckList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BibleCheckList.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BibleCheckList/Pods-BibleCheckList.debug.xcconfig"; sourceTree = "<group>"; };
 		56E0D96AC03063F00AA2E47F /* Pods-BibleCheckList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BibleCheckList.release.xcconfig"; path = "Pods/Target Support Files/Pods-BibleCheckList/Pods-BibleCheckList.release.xcconfig"; sourceTree = "<group>"; };
+		AC0443A321904E64000313EB /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		AC648E9D217CF40D00377686 /* BibleCheckList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BibleCheckList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC648EA0217CF40D00377686 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AC648EA5217CF40D00377686 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -40,6 +44,8 @@
 		ACB326AF217DC7A900BBAC32 /* CheckListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckListViewController.swift; sourceTree = "<group>"; };
 		ACB326B3217DC96400BBAC32 /* CheckListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckListTableViewCell.swift; sourceTree = "<group>"; };
 		ACB326B4217DC96400BBAC32 /* CheckListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckListTableViewCell.xib; sourceTree = "<group>"; };
+		ACB326B8217DCDF800BBAC32 /* PageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageCollectionViewCell.swift; sourceTree = "<group>"; };
+		ACB326B9217DCDF800BBAC32 /* PageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PageCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +66,22 @@
 				102D23F980CB468797CA582F /* Pods_BibleCheckList.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AC04439F219028DD000313EB /* Function */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Function;
+			sourceTree = "<group>";
+		};
+		AC0443A221904E0E000313EB /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				AC648EB3217D946B00377686 /* RealmModel.swift */,
+				AC0443A321904E64000313EB /* RealmManager.swift */,
+			);
+			path = Realm;
 			sourceTree = "<group>";
 		};
 		AC648E94217CF40D00377686 = {
@@ -83,6 +105,8 @@
 		AC648E9F217CF40D00377686 /* BibleCheckList */ = {
 			isa = PBXGroup;
 			children = (
+				AC0443A221904E0E000313EB /* Realm */,
+				AC04439F219028DD000313EB /* Function */,
 				ACB326AE217DC77A00BBAC32 /* Controllers */,
 				ACB326A5217DC65A00BBAC32 /* Fonts */,
 				AC648EB2217D941D00377686 /* Model */,
@@ -98,7 +122,6 @@
 		AC648EB2217D941D00377686 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				AC648EB3217D946B00377686 /* RealmModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -134,10 +157,20 @@
 		ACB326B2217DC93900BBAC32 /* TableViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				ACB326B7217DCDCA00BBAC32 /* CollectionViewCell */,
 				ACB326B3217DC96400BBAC32 /* CheckListTableViewCell.swift */,
 				ACB326B4217DC96400BBAC32 /* CheckListTableViewCell.xib */,
 			);
 			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		ACB326B7217DCDCA00BBAC32 /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				ACB326B8217DCDF800BBAC32 /* PageCollectionViewCell.swift */,
+				ACB326B9217DCDF800BBAC32 /* PageCollectionViewCell.xib */,
+			);
+			path = CollectionViewCell;
 			sourceTree = "<group>";
 		};
 		AE3691AF70D03B6D6CB38374 /* Pods */ = {
@@ -213,6 +246,7 @@
 				AC648EAB217CF41100377686 /* LaunchScreen.storyboard in Resources */,
 				ACB326AB217DC67800BBAC32 /* NanumSquareLight.ttf in Resources */,
 				ACB326AA217DC67800BBAC32 /* NanumSquareExtraBold.ttf in Resources */,
+				ACB326BB217DCDF800BBAC32 /* PageCollectionViewCell.xib in Resources */,
 				ACB326AD217DC67800BBAC32 /* NanumSquareRegular.ttf in Resources */,
 				AC648EA8217CF41100377686 /* Assets.xcassets in Resources */,
 				ACB326AC217DC67800BBAC32 /* NanumSquareBold.ttf in Resources */,
@@ -270,7 +304,9 @@
 			files = (
 				ACB326B5217DC96400BBAC32 /* CheckListTableViewCell.swift in Sources */,
 				ACB326B0217DC7A900BBAC32 /* CheckListViewController.swift in Sources */,
+				ACB326BA217DCDF800BBAC32 /* PageCollectionViewCell.swift in Sources */,
 				AC648EB4217D946B00377686 /* RealmModel.swift in Sources */,
+				AC0443A421904E64000313EB /* RealmManager.swift in Sources */,
 				AC648EA1217CF40D00377686 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -418,15 +454,18 @@
 			baseConfigurationReference = 4B88AD719E9D0D0F9210D8A5 /* Pods-BibleCheckList.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = LK3AE7MHQ3;
+				DEVELOPMENT_TEAM = C85GF39Z87;
 				INFOPLIST_FILE = BibleCheckList/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = eunjin.BibleCheckList;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -437,15 +476,18 @@
 			baseConfigurationReference = 56E0D96AC03063F00AA2E47F /* Pods-BibleCheckList.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = LK3AE7MHQ3;
+				DEVELOPMENT_TEAM = C85GF39Z87;
 				INFOPLIST_FILE = BibleCheckList/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = eunjin.BibleCheckList;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

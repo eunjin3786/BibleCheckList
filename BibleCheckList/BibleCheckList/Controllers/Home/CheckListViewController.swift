@@ -11,7 +11,7 @@ import UIKit
 
 class CheckListViewController: UIViewController {
     
-    
+    let books = RealmManager.shared.getAllBooks()
     @IBOutlet weak var tableView: UITableView!
     var tableViewCells:[UITableViewCell] = []
     
@@ -26,11 +26,12 @@ class CheckListViewController: UIViewController {
 extension CheckListViewController:UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return books.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return tableViewCells[indexPath.row]
+        let cell = tableViewCells[indexPath.row]
+        return cell
     }
     
     func setTableView(){
@@ -39,11 +40,10 @@ extension CheckListViewController:UITableViewDataSource{
     }
     
     func setTableViewCells(){
-        tableViewCells = [CheckListTableViewCell.instanceFromNib(),
-                          CheckListTableViewCell.instanceFromNib(),
-                          CheckListTableViewCell.instanceFromNib(),
-                          CheckListTableViewCell.instanceFromNib(),
-                          CheckListTableViewCell.instanceFromNib()]
+        for book in books{
+            let cell = CheckListTableViewCell.instanceFromNib(book)
+            tableViewCells.append(cell)
+        }
     }
     
 }

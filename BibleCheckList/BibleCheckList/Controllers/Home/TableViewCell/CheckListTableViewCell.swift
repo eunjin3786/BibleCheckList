@@ -8,23 +8,114 @@
 
 import UIKit
 
-class CheckListTableViewCell: UITableViewCell {
 
+class CheckListTableViewCell: UITableViewCell {
+    
+    var book = Book()
+    
+    
+    @IBOutlet weak var bookNameLabel: UILabel!
+    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var collectionViewHeight: NSLayoutConstraint!
+    
+    var estimateWidth = 30.0
+    var cellMarginSize = 3.0
+  
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        setCollectionView()
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        // Configure the view for the selected state
+    
+    func setCollectionView(){
+        collectionView.register(UINib(nibName: "PageCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "PageCollectionViewCell")
+        //xib파일에서 오토레이아웃 하려면 설정해주기 :)
+        //https://zeddios.tistory.com/474
+        self.translatesAutoresizingMaskIntoConstraints = false
+        
+        if let flow = collectionView.collectionViewLayout as? UICollectionViewFlowLayout{
+            flow.minimumInteritemSpacing = CGFloat(self.cellMarginSize)
+            flow.minimumLineSpacing = CGFloat(self.cellMarginSize)
+        }
+
     }
     
-    class func instanceFromNib()->CheckListTableViewCell{
+    class func instanceFromNib( _ book:Book)->CheckListTableViewCell{
+        
         let cell = UINib(nibName: "CheckListTableViewCell", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! CheckListTableViewCell
+        cell.book = book
+        cell.bookNameLabel.text = book.title
+        cell.collectionView.reloadData()
+        cell.setCollectionViewHeight()
         cell.selectionStyle = UITableViewCell.SelectionStyle.none
         return cell
     }
-    
+}
 
+
+extension CheckListTableViewCell:UICollectionViewDataSource{
+
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return book.pageList.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PageCollectionViewCell", for: indexPath) as? PageCollectionViewCell else{
+            return UICollectionViewCell()
+        }
+        
+        let page = book.pageList[indexPath.row]
+        cell.pageNumberLabel.text = page.pageNumber
+        return cell
+    }
+    
+}
+
+extension CheckListTableViewCell:UICollectionViewDelegateFlowLayout{
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = self.calculateWith()
+        return CGSize(width: width, height: width)
+    }
+    
+    func calculateWith() -> CGFloat {
+        let estimatedWidth = CGFloat(estimateWidth)
+        let cellCount = floor(CGFloat(collectionView.frame.size.width / estimatedWidth))
+        
+        let margin = CGFloat(cellMarginSize * 2)
+        let width = (collectionView.frame.size.width - CGFloat(cellMarginSize) * (cellCount - 1) - margin) / cellCount
+        
+        return width
+    }
+    
+    /*
+    func calculateActualSpacing()->CGFloat?{
+        let firstIndex =  IndexPath(item: 0, section: 0)
+        let secondIndex = IndexPath(item: 1, section: 0)
+        if let att1 = collectionView.layoutAttributesForItem(at: firstIndex),
+            let att2 = collectionView.layoutAttributesForItem(at: secondIndex) {
+            let actualSpace = att2.frame.minX - att1.frame.maxX
+            
+            return actualSpace
+        }
+        
+        return nil
+    }
+    */
+
+    //문제1 : 마지막 인덱스의 아이템의  maxY로 높이를 설정해주면 깔끔한데
+    // se에서는 값을 correct하게 못찾는다 -> stack overflow에 올려보기
+  
+    func setCollectionViewHeight(){
+        
+        let lastIndex = IndexPath(item: book.pageList.count-1, section: 0)
+        
+        if let att = collectionView.layoutAttributesForItem(at: lastIndex){
+            collectionViewHeight.constant = att.frame.maxY
+        }
+        
+        //https://stackoverflow.com/questions/14674986/uicollectionview-set-number-of-columns
+    }
+    
 }

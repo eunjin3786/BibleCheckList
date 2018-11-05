@@ -16,40 +16,55 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CheckListTableViewCell" rowHeight="213" id="KGk-i7-Jjw" customClass="CheckListTableViewCell" customModule="BibleCheckList" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" indentationWidth="10" reuseIdentifier="CheckListTableViewCell" rowHeight="213" id="KGk-i7-Jjw" customClass="CheckListTableViewCell" customModule="BibleCheckList" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="380" height="213"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="380" height="212.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="창세기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jnZ-HB-OJp">
-                        <rect key="frame" x="15" y="15" width="47" height="19"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="창세기" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jnZ-HB-OJp">
+                        <rect key="frame" x="24" y="15" width="50" height="19"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="50" id="u2L-zr-Wdp"/>
+                        </constraints>
                         <fontDescription key="fontDescription" name="NanumSquareR" family="NanumSquare" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Nt8-lK-guW">
-                        <rect key="frame" x="124" y="0.0" width="256" height="212.5"/>
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Nt8-lK-guW">
+                        <rect key="frame" x="98" y="15" width="267" height="182.5"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="rKH-ro-5Ks">
-                            <size key="itemSize" width="50" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="height" priority="750" constant="200" id="Bbv-KP-asH"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="2qh-Kh-bHA"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="rKH-ro-5Ks">
+                            <size key="itemSize" width="30" height="30"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
+                        <connections>
+                            <outlet property="dataSource" destination="KGk-i7-Jjw" id="8QB-Fv-ran"/>
+                            <outlet property="delegate" destination="KGk-i7-Jjw" id="7JW-jJ-xhh"/>
+                        </connections>
                     </collectionView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="jnZ-HB-OJp" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="7wT-Df-jRf"/>
-                    <constraint firstItem="Nt8-lK-guW" firstAttribute="leading" secondItem="jnZ-HB-OJp" secondAttribute="trailing" constant="62" id="Amj-fl-3bV"/>
-                    <constraint firstAttribute="bottom" secondItem="Nt8-lK-guW" secondAttribute="bottom" id="FHW-ao-onF"/>
-                    <constraint firstItem="jnZ-HB-OJp" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="KVl-c7-5HZ"/>
-                    <constraint firstItem="Nt8-lK-guW" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="fCC-GW-z4j"/>
-                    <constraint firstAttribute="trailing" secondItem="Nt8-lK-guW" secondAttribute="trailing" id="jpS-CE-Wrc"/>
+                    <constraint firstItem="Nt8-lK-guW" firstAttribute="leading" secondItem="jnZ-HB-OJp" secondAttribute="trailing" constant="24" id="Amj-fl-3bV"/>
+                    <constraint firstAttribute="bottom" secondItem="Nt8-lK-guW" secondAttribute="bottom" constant="15" id="FHW-ao-onF"/>
+                    <constraint firstItem="jnZ-HB-OJp" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="KVl-c7-5HZ"/>
+                    <constraint firstItem="Nt8-lK-guW" firstAttribute="top" secondItem="jnZ-HB-OJp" secondAttribute="top" id="Nap-dc-YvN"/>
+                    <constraint firstAttribute="trailing" secondItem="Nt8-lK-guW" secondAttribute="trailing" constant="15" id="jpS-CE-Wrc"/>
                 </constraints>
             </tableViewCellContentView>
-            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="bookNameLabel" destination="jnZ-HB-OJp" id="9DB-Cj-T1p"/>
+                <outlet property="collectionView" destination="Nt8-lK-guW" id="IvS-La-Sae"/>
+                <outlet property="collectionViewHeight" destination="Bbv-KP-asH" id="fdx-HM-Lxg"/>
+            </connections>
             <point key="canvasLocation" x="185.59999999999999" y="192.95352323838082"/>
         </tableViewCell>
     </objects>
