@@ -79,6 +79,22 @@ extension CheckListTableViewCell:UICollectionViewDelegateFlowLayout{
         return CGSize(width: width, height: width)
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let page = book.pageList[indexPath.row]
+        RealmManager.shared.changeIsReadOfPage(title: book.title, pageNumber: page.pageNumber, isRead: !page.isRead)
+
+        if let cell = collectionView.cellForItem(at: indexPath) as? PageCollectionViewCell{
+            cell.toggle(isRead:!page.isRead)
+        }
+        
+    }
+
+    
+}
+
+
+extension CheckListTableViewCell{
+    
     func calculateWith() -> CGFloat {
         let estimatedWidth = CGFloat(estimateWidth)
         let cellCount = floor(CGFloat(collectionView.frame.size.width / estimatedWidth))
@@ -90,23 +106,23 @@ extension CheckListTableViewCell:UICollectionViewDelegateFlowLayout{
     }
     
     /*
-    func calculateActualSpacing()->CGFloat?{
-        let firstIndex =  IndexPath(item: 0, section: 0)
-        let secondIndex = IndexPath(item: 1, section: 0)
-        if let att1 = collectionView.layoutAttributesForItem(at: firstIndex),
-            let att2 = collectionView.layoutAttributesForItem(at: secondIndex) {
-            let actualSpace = att2.frame.minX - att1.frame.maxX
-            
-            return actualSpace
-        }
-        
-        return nil
-    }
-    */
-
+     func calculateActualSpacing()->CGFloat?{
+     let firstIndex =  IndexPath(item: 0, section: 0)
+     let secondIndex = IndexPath(item: 1, section: 0)
+     if let att1 = collectionView.layoutAttributesForItem(at: firstIndex),
+     let att2 = collectionView.layoutAttributesForItem(at: secondIndex) {
+     let actualSpace = att2.frame.minX - att1.frame.maxX
+     
+     return actualSpace
+     }
+     
+     return nil
+     }
+     */
+    
     //문제1 : 마지막 인덱스의 아이템의  maxY로 높이를 설정해주면 깔끔한데
     // se에서는 값을 correct하게 못찾는다 -> stack overflow에 올려보기
-  
+    
     func setCollectionViewHeight(){
         
         let lastIndex = IndexPath(item: book.pageList.count-1, section: 0)
@@ -117,5 +133,4 @@ extension CheckListTableViewCell:UICollectionViewDelegateFlowLayout{
         
         //https://stackoverflow.com/questions/14674986/uicollectionview-set-number-of-columns
     }
-    
 }

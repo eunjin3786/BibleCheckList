@@ -70,7 +70,7 @@ class RealmManager{
         return nil
     }
     
-    func changeIsReadOfBook(title:String, pageNumber:String, isRead:Bool){
+    func changeIsReadOfPage(title:String, pageNumber:String, isRead:Bool){
         
         do{
             let realm = try Realm()
