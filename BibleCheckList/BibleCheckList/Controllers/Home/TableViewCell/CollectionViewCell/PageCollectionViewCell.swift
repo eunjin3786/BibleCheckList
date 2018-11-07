@@ -22,7 +22,7 @@ class PageCollectionViewCell: UICollectionViewCell {
         if isRead{
             self.backgroundColor = UIColor.darkYellow
         } else {
-            self.backgroundColor = UIColor.lightGray
+            self.backgroundColor = UIColor.whiteGray
         }
     }
 

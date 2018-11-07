@@ -16,8 +16,7 @@ class RealmManager{
     
     private init(){
         if !getAllBooks().isEmpty{return}
-    
-        
+
         addBook(title: "창세기", numOfpages: 50,category: .old)
         addBook(title: "출애굽기", numOfpages: 40, category: .old)
         addBook(title: "레위기", numOfpages: 27, category: .old)

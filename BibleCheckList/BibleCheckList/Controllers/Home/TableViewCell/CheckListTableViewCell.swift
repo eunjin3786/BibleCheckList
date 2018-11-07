@@ -13,7 +13,6 @@ class CheckListTableViewCell: UITableViewCell {
     
     var book = Book()
     
-    
     @IBOutlet weak var bookNameLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var collectionViewHeight: NSLayoutConstraint!
@@ -67,6 +66,7 @@ extension CheckListTableViewCell:UICollectionViewDataSource{
         
         let page = book.pageList[indexPath.row]
         cell.pageNumberLabel.text = page.pageNumber
+        cell.toggle(isRead: page.isRead)
         return cell
     }
     
@@ -84,7 +84,7 @@ extension CheckListTableViewCell:UICollectionViewDelegateFlowLayout{
         RealmManager.shared.changeIsReadOfPage(title: book.title, pageNumber: page.pageNumber, isRead: !page.isRead)
 
         if let cell = collectionView.cellForItem(at: indexPath) as? PageCollectionViewCell{
-            cell.toggle(isRead:!page.isRead)
+            cell.toggle(isRead:page.isRead)
         }
         
     }
@@ -104,22 +104,7 @@ extension CheckListTableViewCell{
         
         return width
     }
-    
-    /*
-     func calculateActualSpacing()->CGFloat?{
-     let firstIndex =  IndexPath(item: 0, section: 0)
-     let secondIndex = IndexPath(item: 1, section: 0)
-     if let att1 = collectionView.layoutAttributesForItem(at: firstIndex),
-     let att2 = collectionView.layoutAttributesForItem(at: secondIndex) {
-     let actualSpace = att2.frame.minX - att1.frame.maxX
-     
-     return actualSpace
-     }
-     
-     return nil
-     }
-     */
-    
+
     //문제1 : 마지막 인덱스의 아이템의  maxY로 높이를 설정해주면 깔끔한데
     // se에서는 값을 correct하게 못찾는다 -> stack overflow에 올려보기
     
@@ -130,7 +115,6 @@ extension CheckListTableViewCell{
         if let att = collectionView.layoutAttributesForItem(at: lastIndex){
             collectionViewHeight.constant = att.frame.maxY
         }
-        
         //https://stackoverflow.com/questions/14674986/uicollectionview-set-number-of-columns
     }
 }
