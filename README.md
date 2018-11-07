@@ -13,10 +13,10 @@
   
   * 창세기,출애굽기.... BookClass로 정의
   * BookClass
-    * name:Enum
-    * catergory:Enum (구약/신약) 
-    * totalPageCount:Int (한 권 당 총 페이지 수)
-    * myPageList:[String] (내가 읽은 페이지들)  
+    * title
+    * List<PageObject> 
+    * catergory (구약/신약 등) 
+    
     
     
 ## 기획 & UI 
@@ -33,6 +33,8 @@
 * 드래드해서 CELL의 순서를 바꿀수있는 reorderable tableview 만들기 
 * key color 설정해서 색깔바뀔수있게 
 
+* 공부한 것을 적용해보기 위해 RX / MVVM / 완전완전 FP 로도 해보기 :) 
+
 
 
 ## 개발 
@@ -42,10 +44,6 @@
   * name
   * totalPageCount만큼 collectionViewCell을 가진 collectionView 
 
-  BookClass에 대응한다  
-  초기화할때  
-  * name과 totalPageCount로 cell을 만들고
-  * myPageList에 해당하는 값들 색칠해주기 
   
 * 사용자가 collectionviewCell을 터치할때마다 색칠  
   토글 버튼 식으로 하는게 좋을듯?!?! 
