@@ -28,7 +28,6 @@ class PageObject:Object{
 
 class Book:Object{
     @objc dynamic var title:String = ""
-    //list는 dynamic 안쓰는 추세 ( 더 찾아보기
     var pageList = List<PageObject>()
     @objc dynamic var category:String = Category.old.rawValue
     

@@ -107,14 +107,13 @@ extension CheckListTableViewCell{
 
     //문제1 : 마지막 인덱스의 아이템의  maxY로 높이를 설정해주면 깔끔한데
     // se에서는 값을 correct하게 못찾는다 -> stack overflow에 올려보기
-    
+    //https://stackoverflow.com/questions/14674986/uicollectionview-set-number-of-columns
     func setCollectionViewHeight(){
         
         let lastIndex = IndexPath(item: book.pageList.count-1, section: 0)
-        
         if let att = collectionView.layoutAttributesForItem(at: lastIndex){
             collectionViewHeight.constant = att.frame.maxY
         }
-        //https://stackoverflow.com/questions/14674986/uicollectionview-set-number-of-columns
+        
     }
 }

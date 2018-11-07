@@ -11,7 +11,6 @@ import UIKit
 class PageCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var pageNumberLabel: UILabel!
-    var isRead = false
 
     override func awakeFromNib() {
         super.awakeFromNib()
