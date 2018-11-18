@@ -15,6 +15,8 @@
 		AC648EA8217CF41100377686 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC648EA7217CF41100377686 /* Assets.xcassets */; };
 		AC648EAB217CF41100377686 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC648EA9217CF41100377686 /* LaunchScreen.storyboard */; };
 		AC648EB4217D946B00377686 /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC648EB3217D946B00377686 /* RealmModel.swift */; };
+		AC6DE1FE21A1CC9500DFD55B /* category_type_1.txt in Resources */ = {isa = PBXBuildFile; fileRef = AC6DE1FD21A1CC9500DFD55B /* category_type_1.txt */; };
+		AC6DE20121A1CD2D00DFD55B /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6DE20021A1CD2D00DFD55B /* String.swift */; };
 		ACB326AA217DC67800BBAC32 /* NanumSquareExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ACB326A6217DC67600BBAC32 /* NanumSquareExtraBold.ttf */; };
 		ACB326AB217DC67800BBAC32 /* NanumSquareLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ACB326A7217DC67600BBAC32 /* NanumSquareLight.ttf */; };
 		ACB326AC217DC67800BBAC32 /* NanumSquareBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ACB326A8217DC67700BBAC32 /* NanumSquareBold.ttf */; };
@@ -39,6 +41,8 @@
 		AC648EAA217CF41100377686 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AC648EAC217CF41100377686 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC648EB3217D946B00377686 /* RealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmModel.swift; sourceTree = "<group>"; };
+		AC6DE1FD21A1CC9500DFD55B /* category_type_1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = category_type_1.txt; sourceTree = "<group>"; };
+		AC6DE20021A1CD2D00DFD55B /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		ACB326A6217DC67600BBAC32 /* NanumSquareExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareExtraBold.ttf; sourceTree = "<group>"; };
 		ACB326A7217DC67600BBAC32 /* NanumSquareLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareLight.ttf; sourceTree = "<group>"; };
 		ACB326A8217DC67700BBAC32 /* NanumSquareBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareBold.ttf; sourceTree = "<group>"; };
@@ -89,6 +93,7 @@
 		AC0443A521911362000313EB /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				AC6DE1FD21A1CC9500DFD55B /* category_type_1.txt */,
 				AC648EA7217CF41100377686 /* Assets.xcassets */,
 				ACB326A5217DC65A00BBAC32 /* Fonts */,
 				AC0443A6219113AD000313EB /* UIColor.swift */,
@@ -117,6 +122,7 @@
 		AC648E9F217CF40D00377686 /* BibleCheckList */ = {
 			isa = PBXGroup;
 			children = (
+				AC6DE1FF21A1CD1200DFD55B /* Extension */,
 				AC0443A521911362000313EB /* Resource */,
 				AC0443A221904E0E000313EB /* Realm */,
 				AC04439F219028DD000313EB /* Function */,
@@ -135,6 +141,14 @@
 			children = (
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		AC6DE1FF21A1CD1200DFD55B /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				AC6DE20021A1CD2D00DFD55B /* String.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		ACB326A5217DC65A00BBAC32 /* Fonts */ = {
@@ -262,6 +276,7 @@
 				AC648EA8217CF41100377686 /* Assets.xcassets in Resources */,
 				ACB326AC217DC67800BBAC32 /* NanumSquareBold.ttf in Resources */,
 				AC648EA6217CF40D00377686 /* Main.storyboard in Resources */,
+				AC6DE1FE21A1CC9500DFD55B /* category_type_1.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,6 +334,7 @@
 				ACB326BA217DCDF800BBAC32 /* PageCollectionViewCell.swift in Sources */,
 				AC648EB4217D946B00377686 /* RealmModel.swift in Sources */,
 				AC0443A421904E64000313EB /* RealmManager.swift in Sources */,
+				AC6DE20121A1CD2D00DFD55B /* String.swift in Sources */,
 				AC648EA1217CF40D00377686 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

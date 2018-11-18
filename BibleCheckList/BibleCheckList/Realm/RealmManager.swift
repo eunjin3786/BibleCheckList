@@ -10,31 +10,81 @@ import Foundation
 import RealmSwift
 
 
+typealias BookTuple = (title:String,numOfpages:Int,category:Category)
+// 다 쓰기 어려우니까 텍스트 파일을 넣고 텍스트 읽어줄것임
+// http://www.kyobobook.co.kr/product/detailViewKor.laf?mallGb=KOR&ejkGb=KOR&barcode=9788904502462&orderClick=JAE 타입여러개로
+//https://stackoverflow.com/questions/31778700/read-a-text-file-line-by-line-in-swift
+
+//시편 같은 예외케이스 처리 깔끔하게 해줄수있는 방법생각
+//한글 utf8 정규표현식
+//guard let 에 대해서도 생각
+//코드정리
+func getBibleInfoFromFile() -> [BookTuple]{
+    
+    var bible:[BookTuple] = []
+    
+    if let path = Bundle.main.path(forResource: "category_type_1", ofType: "txt") {
+        do {
+            let data = try String(contentsOfFile: path, encoding: .utf8)
+            let myStrings = data.components(separatedBy: .newlines)
+            
+            guard let newIndex:Int = myStrings.firstIndex(of: "신약 ") else {return []}
+            
+            
+            for (index,item) in myStrings.enumerated(){
+                
+                //if item == "구약 " || item == "신약 " {continue}
+    
+                if !item.contains("장") {continue}
+                //print(item.getArrayAfterRegex(regex: "*.("))
+                //print(item.getArrayAfterRegex(regex: "([0-9]+"))
+                
+                guard let title = item.components(separatedBy: ["(","장"]).first else{return []}
+                guard let numOfPages = Int(item.components(separatedBy: ["(","장"])[1]) else{return [] }
+                
+
+                if title == "잠언" || title == "시편"{
+                    bible.append((title,numOfPages,.daily))
+                } else if index < newIndex{
+                    bible.append((title,numOfPages,.old))
+                } else {
+                    bible.append((title,numOfPages,.new))
+                }
+            
+            }
+
+        } catch {
+            print(error)
+        }
+    }
+    
+    return bible
+}
+
 class RealmManager{
     
     static let shared = RealmManager()
     
     private init(){
+        //테스트중..
+        //getAllBooks().map{$0.delete()}
         if !getAllBooks().isEmpty{return}
-
-        addBook(title: "창세기", numOfpages: 50,category: .old)
-        addBook(title: "출애굽기", numOfpages: 40, category: .old)
-        addBook(title: "레위기", numOfpages: 27, category: .old)
-        addBook(title: "시편", numOfpages: 150, category: .daily)
+        let bible = getBibleInfoFromFile()
+        _ = bible.map{addBook($0)}
     }
     
-    func addBook(title:String,numOfpages:Int,category:Category){
+    func addBook(_ bookTuple:BookTuple){
         
         //db에 추가
         let book = Book()
-        book.title = title
+        book.title = bookTuple.title
         
-        for i in 1...numOfpages{
+        for i in 1...bookTuple.numOfpages{
             let pageObject = PageObject(pageNumber: String(i))
             book.pageList.append(pageObject)
         }
 
-        book.category = category.rawValue
+        book.category = bookTuple.category.rawValue
         book.add()
     }
     
@@ -55,6 +105,24 @@ class RealmManager{
         
         return bookList
     }
+    
+    func getBooksOfCategory(category:String)->[Book]{
+        
+        var bookList:[Book] = []
+        
+        do {
+            let realm = try Realm()
+            let books = realm.objects(Book.self).filter{$0.category == category}
+            bookList = books.map{$0}
+            
+        } catch let error as NSError {
+            print(error.localizedDescription)
+        }
+        
+        return bookList
+        
+    }
+    
     
     func getBook(title:String)->Book?{
         

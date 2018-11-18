@@ -11,14 +11,31 @@ import UIKit
 
 class CheckListViewController: UIViewController {
     
-    let books = RealmManager.shared.getAllBooks()
     @IBOutlet weak var tableView: UITableView!
     var tableViewCells:[UITableViewCell] = []
+    
+    @IBOutlet weak var categorySegmentedControl: UISegmentedControl!
+    
+    @IBAction func categorySegmentedControlAction(_ sender: Any) {
+        setTableViewCells(books:getBooksOfCategory())
+    }
+    
+    func getBooksOfCategory()->[Book]{
+        
+        let selectedIndex = categorySegmentedControl.selectedSegmentIndex
+        if let title = categorySegmentedControl.titleForSegment(at: selectedIndex){
+           let books = RealmManager.shared.getBooksOfCategory(category: title)
+           return books
+        }
+        
+        return []
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setTableView()
-        setTableViewCells()
+        setTableViewCells(books:getBooksOfCategory())
+        // category -> tableviewcells -> tableview reload
     }
     
 }
@@ -26,7 +43,7 @@ class CheckListViewController: UIViewController {
 extension CheckListViewController:UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return books.count
+        return tableViewCells.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -39,11 +56,14 @@ extension CheckListViewController:UITableViewDataSource{
         tableView.rowHeight = UITableView.automaticDimension
     }
     
-    func setTableViewCells(){
+    func setTableViewCells(books:[Book]){
+        tableViewCells = []
         for book in books{
             let cell = CheckListTableViewCell.instanceFromNib(book)
             tableViewCells.append(cell)
         }
+        
+        tableView.reloadData()
     }
     
 }
