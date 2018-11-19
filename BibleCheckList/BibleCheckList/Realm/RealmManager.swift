@@ -143,5 +143,26 @@ class RealmManager{
         }
     }
     
-    
+    func chageAllRead(title:String){
+        
+        do{
+            let realm = try Realm()
+            let book = realm.objects(Book.self).filter{$0.title == title}.first
+            try realm.write {
+                
+                //더찾아보기 map을 이용해서 값을 바꿔주는 방법
+                //book?.pageList.map{$0.isRead = true}
+                
+                if let pageList = book?.pageList{
+                    for page in pageList{
+                        page.isRead = true
+                    }
+                }
+                
+            }
+        } catch let error as NSError {
+            print(error.localizedDescription)
+        }
+    }
+
 }

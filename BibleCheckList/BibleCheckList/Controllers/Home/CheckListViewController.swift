@@ -10,8 +10,9 @@ import UIKit
 
 class CheckListViewController: UIViewController {
     
+    var books:[Book] = []
     @IBOutlet weak var tableView: UITableView!
-    var tableViewCells:[UITableViewCell] = []
+    var tableViewCells:[CheckListTableViewCell] = []
     
     @IBOutlet weak var categorySegmentedControl: UISegmentedControl!
     
@@ -58,6 +59,7 @@ extension CheckListViewController:UITableViewDataSource{
     }
     
     func setTableViewCells(books:[Book]){
+        self.books = books
         tableViewCells = []
         for book in books{
             let cell = CheckListTableViewCell.instanceFromNib(book)
@@ -76,24 +78,38 @@ extension CheckListViewController:UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
-        let important = importantAction(at: indexPath)
-        return UISwipeActionsConfiguration(actions: [important])
+        let finish = finishAction(at: indexPath)
+        return UISwipeActionsConfiguration(actions: [finish])
     }
     
+    /*
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
-        let important = importantAction(at: indexPath)
-        return UISwipeActionsConfiguration(actions: [important])
+        let more = moreAction(at: indexPath)
+        return UISwipeActionsConfiguration(actions: [more])
     }
     
+    func moreAction(at inIndexPath:IndexPath) -> UIContextualAction{
+    }
+    */
+    
     //https://www.youtube.com/watch?v=wUVfE8cY2Hw
-    func importantAction(at inIndexPath:IndexPath) -> UIContextualAction{
+    func finishAction(at indexPath:IndexPath) -> UIContextualAction{
         
-        let action = UIContextualAction(style: .normal, title: "테스트") { (action, view, completion) in
+        let action = UIContextualAction(style: .normal, title: "") { [weak self] (action, view, completion) in
             
-            print("액션")
+            guard let `self` = self else{return}
+            
+            let book = self.books[indexPath.row]
+            RealmManager.shared.chageAllRead(title: book.title)
+            
+            let cell = self.tableViewCells[indexPath.row]
+            cell.book = book 
+            cell.collectionView.reloadData()
+            
         }
         action.backgroundColor = UIColor.darkYellow
+        action.image = UIImage(named: "finish")
         return action
     }
 }
