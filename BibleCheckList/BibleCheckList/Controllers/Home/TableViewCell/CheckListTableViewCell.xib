@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -23,17 +24,17 @@
                 <rect key="frame" x="0.0" y="0.0" width="380" height="212.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="창세기" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jnZ-HB-OJp">
-                        <rect key="frame" x="24" y="15" width="50" height="19"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="창세기" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="jnZ-HB-OJp">
+                        <rect key="frame" x="24" y="15" width="65" height="18"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="50" id="u2L-zr-Wdp"/>
+                            <constraint firstAttribute="width" constant="65" id="u2L-zr-Wdp"/>
                         </constraints>
-                        <fontDescription key="fontDescription" name="NanumSquareR" family="NanumSquare" pointSize="17"/>
+                        <fontDescription key="fontDescription" name="NanumSquareR" family="NanumSquare" pointSize="16"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Nt8-lK-guW">
-                        <rect key="frame" x="98" y="15" width="267" height="182.5"/>
+                        <rect key="frame" x="101" y="15" width="263" height="177.5"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="height" priority="750" constant="200" id="Bbv-KP-asH"/>
@@ -53,11 +54,11 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="jnZ-HB-OJp" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="7wT-Df-jRf"/>
-                    <constraint firstItem="Nt8-lK-guW" firstAttribute="leading" secondItem="jnZ-HB-OJp" secondAttribute="trailing" constant="24" id="Amj-fl-3bV"/>
-                    <constraint firstAttribute="bottom" secondItem="Nt8-lK-guW" secondAttribute="bottom" constant="15" id="FHW-ao-onF"/>
+                    <constraint firstItem="Nt8-lK-guW" firstAttribute="leading" secondItem="jnZ-HB-OJp" secondAttribute="trailing" constant="12" id="Amj-fl-3bV"/>
+                    <constraint firstAttribute="bottom" secondItem="Nt8-lK-guW" secondAttribute="bottom" constant="20" id="FHW-ao-onF"/>
                     <constraint firstItem="jnZ-HB-OJp" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="KVl-c7-5HZ"/>
                     <constraint firstItem="Nt8-lK-guW" firstAttribute="top" secondItem="jnZ-HB-OJp" secondAttribute="top" id="Nap-dc-YvN"/>
-                    <constraint firstAttribute="trailing" secondItem="Nt8-lK-guW" secondAttribute="trailing" constant="15" id="jpS-CE-Wrc"/>
+                    <constraint firstAttribute="trailing" secondItem="Nt8-lK-guW" secondAttribute="trailing" constant="16" id="jpS-CE-Wrc"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

@@ -60,9 +60,7 @@ class RealmManager{
     static let shared = RealmManager()
     
     private init(){
-        //테스트중..
-        getAllBooks().map{$0.delete()}
-        //if !getAllBooks().isEmpty{return}
+        if !getAllBooks().isEmpty{return}
         let bible = getBibleInfoFromFile()
         _ = bible.map{addBook($0)}
     }

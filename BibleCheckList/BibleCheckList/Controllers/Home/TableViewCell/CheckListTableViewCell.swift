@@ -17,7 +17,7 @@ class CheckListTableViewCell: UITableViewCell {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var collectionViewHeight: NSLayoutConstraint!
     
-    var estimateWidth = 30.0
+    var estimateWidth = 35.0
     var cellMarginSize = 3.0
   
     override func awakeFromNib() {
