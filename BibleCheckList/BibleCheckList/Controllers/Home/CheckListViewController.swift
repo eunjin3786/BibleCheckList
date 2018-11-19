@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 class CheckListViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
@@ -30,6 +29,8 @@ class CheckListViewController: UIViewController {
         
         return []
     }
+    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,6 +65,8 @@ extension CheckListViewController:UITableViewDataSource{
         }
         
         tableView.reloadData()
+        tableView.scrollToRow(at:IndexPath(row: 0, section: 0), at: .top, animated: true)
+        
     }
     
 }
@@ -71,4 +74,26 @@ extension CheckListViewController:UITableViewDataSource{
 
 extension CheckListViewController:UITableViewDelegate{
     
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let important = importantAction(at: indexPath)
+        return UISwipeActionsConfiguration(actions: [important])
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let important = importantAction(at: indexPath)
+        return UISwipeActionsConfiguration(actions: [important])
+    }
+    
+    //https://www.youtube.com/watch?v=wUVfE8cY2Hw
+    func importantAction(at inIndexPath:IndexPath) -> UIContextualAction{
+        
+        let action = UIContextualAction(style: .normal, title: "테스트") { (action, view, completion) in
+            
+            print("액션")
+        }
+        action.backgroundColor = UIColor.darkYellow
+        return action
+    }
 }

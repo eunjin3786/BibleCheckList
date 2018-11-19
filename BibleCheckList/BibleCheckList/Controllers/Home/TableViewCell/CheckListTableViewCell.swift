@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 class CheckListTableViewCell: UITableViewCell {
     
     var book = Book()
@@ -23,6 +22,7 @@ class CheckListTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         setCollectionView()
+        setLongPressGesture()
     }
 
     
@@ -36,7 +36,15 @@ class CheckListTableViewCell: UITableViewCell {
             flow.minimumInteritemSpacing = CGFloat(self.cellMarginSize)
             flow.minimumLineSpacing = CGFloat(self.cellMarginSize)
         }
-
+    }
+    
+    func setLongPressGesture(){
+        let longPressGesture = UILongPressGestureRecognizer(target: self, action:#selector(longPressAction))
+        self.addGestureRecognizer(longPressGesture)
+    }
+    
+    @objc func longPressAction(){
+        print(book.title)
     }
     
     class func instanceFromNib( _ book:Book)->CheckListTableViewCell{
