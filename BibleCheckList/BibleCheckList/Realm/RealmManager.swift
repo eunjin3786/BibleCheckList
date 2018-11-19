@@ -33,9 +33,9 @@ func getBibleInfoFromFile() -> [BookTuple]{
             
             for (index,item) in myStrings.enumerated(){
                 
-                guard let title = item.getArrayAfterRegex(regex: "[ㄱ-ㅎㅏ-ㅣ가-힣]+").first else{continue}
+                guard let title = item.getArrayAfterRegex(regex: "[ㄱ-ㅎㅏ-ㅣ가-힣0-9]+()").first else{continue}
                 
-                guard let numString = item.getArrayAfterRegex(regex: "[0-9]+").first,let numOfPages = Int(numString) else{continue}
+                guard let numString = item.getArrayAfterRegex(regex: "[(][(0-9)]+").first, let numOfPages = Int(numString[numString.index(after: numString.startIndex)...]) else{continue}
 
                 if title == "잠언" || title == "시편"{
                     bible.append((title,numOfPages,.daily))
@@ -61,7 +61,7 @@ class RealmManager{
     
     private init(){
         //테스트중..
-        //getAllBooks().map{$0.delete()}
+        getAllBooks().map{$0.delete()}
         //if !getAllBooks().isEmpty{return}
         let bible = getBibleInfoFromFile()
         _ = bible.map{addBook($0)}
