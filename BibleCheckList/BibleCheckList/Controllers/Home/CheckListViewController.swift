@@ -11,8 +11,8 @@ import UIKit
 class CheckListViewController: UIViewController {
     
     var books:[Book] = []
-    @IBOutlet weak var tableView: UITableView!
     var tableViewCells:[CheckListTableViewCell] = []
+    @IBOutlet weak var tableView: UITableView!
     
     @IBOutlet weak var categorySegmentedControl: UISegmentedControl!
     
@@ -31,7 +31,6 @@ class CheckListViewController: UIViewController {
         return []
     }
     
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,6 +55,7 @@ extension CheckListViewController:UITableViewDataSource{
     func setTableView(){
         tableView.estimatedRowHeight = 150
         tableView.rowHeight = UITableView.automaticDimension
+    
     }
     
     func setTableViewCells(books:[Book]){
@@ -82,18 +82,14 @@ extension CheckListViewController:UITableViewDelegate{
         return UISwipeActionsConfiguration(actions: [finish])
     }
     
-    /*
+
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
-        let more = moreAction(at: indexPath)
-        return UISwipeActionsConfiguration(actions: [more])
+        let clear = clearAction(at:indexPath)
+        //let send = sendAction(at: indexPath)
+        return UISwipeActionsConfiguration(actions: [clear])
     }
     
-    func moreAction(at inIndexPath:IndexPath) -> UIContextualAction{
-    }
-    */
-    
-    //https://www.youtube.com/watch?v=wUVfE8cY2Hw
     func finishAction(at indexPath:IndexPath) -> UIContextualAction{
         
         let action = UIContextualAction(style: .normal, title: "") { [weak self] (action, view, completion) in
@@ -101,10 +97,10 @@ extension CheckListViewController:UITableViewDelegate{
             guard let `self` = self else{return}
             
             let book = self.books[indexPath.row]
-            RealmManager.shared.chageAllRead(title: book.title)
+            RealmManager.shared.changeAllRead(title: book.title,isRead:true)
             
             let cell = self.tableViewCells[indexPath.row]
-            cell.book = book 
+            cell.book = book
             cell.collectionView.reloadData()
             
         }
@@ -112,4 +108,37 @@ extension CheckListViewController:UITableViewDelegate{
         action.image = UIImage(named: "finish")
         return action
     }
+    
+    func clearAction(at indexPath:IndexPath) -> UIContextualAction{
+        
+        let action = UIContextualAction(style: .normal, title: "") { [weak self] (action, view, completion) in
+            
+            guard let `self` = self else{return}
+            
+            let book = self.books[indexPath.row]
+            RealmManager.shared.changeAllRead(title: book.title,isRead:false)
+            
+            let cell = self.tableViewCells[indexPath.row]
+            cell.book = book
+            cell.collectionView.reloadData()
+            
+        }
+        action.backgroundColor = UIColor.red
+        action.image = UIImage(named: "refresh")
+        return action
+    }
+    
+    /*
+    func sendAction(at indexPath:IndexPath) -> UIContextualAction{
+        
+        let action = UIContextualAction(style: .normal, title: "") { [weak self] (action, view, completion) in
+            
+            guard let `self` = self else{return}
+            
+        }
+        action.backgroundColor = UIColor.lightMint
+        action.image = UIImage(named: "send")
+        return action
+    }
+    */
 }

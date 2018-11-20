@@ -22,7 +22,6 @@ class CheckListTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         setCollectionView()
-        setLongPressGesture()
     }
 
     
@@ -37,16 +36,7 @@ class CheckListTableViewCell: UITableViewCell {
             flow.minimumLineSpacing = CGFloat(self.cellMarginSize)
         }
     }
-    
-    func setLongPressGesture(){
-        let longPressGesture = UILongPressGestureRecognizer(target: self, action:#selector(longPressAction))
-        self.addGestureRecognizer(longPressGesture)
-    }
-    
-    @objc func longPressAction(){
-        print(book.title)
-    }
-    
+  
     class func instanceFromNib( _ book:Book)->CheckListTableViewCell{
         
         let cell = UINib(nibName: "CheckListTableViewCell", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! CheckListTableViewCell
