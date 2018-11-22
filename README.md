@@ -1,16 +1,19 @@
 # BibleCheckList
 성경읽기표 
 
-## 스크린 
 
 ### 성경 66권 읽어보자 :) 
+
 <a href="https://imgflip.com/gif/2n5uho"><img src="https://i.imgflip.com/2n5uho.gif" title="made at imgflip.com"/></a>
 
 ### 읽은 장은 쳌
+
 <a href="https://imgflip.com/gif/2n5u4o"><img src="https://i.imgflip.com/2n5u4o.gif" title="made at imgflip.com"/></a>
 
 ### 스와이프로 한 권을 다 읽으면 편하게 쳌쳌 
+
 <a href="https://imgflip.com/gif/2n5tr4"><img src="https://i.imgflip.com/2n5tr4.gif" title="made at imgflip.com"/></a> 
+
 
 
 ## 기획의도
