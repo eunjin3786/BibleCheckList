@@ -2,6 +2,31 @@
 성경읽기표 
 
 
+
+#### ✅ 읽은 장은 쳌
+<a href="https://imgflip.com/gif/2n5u4o"><img src="https://i.imgflip.com/2n5u4o.gif" title="made at imgflip.com"/></a>
+
+
+
+
+
+
+
+#### ✅ 스와이프로 한 권을 다 읽으면 편하게 쳌쳌 
+<a href="https://imgflip.com/gif/2n5tr4"><img src="https://i.imgflip.com/2n5tr4.gif" title="made at imgflip.com"/></a> 
+
+
+
+
+
+
+
+#### ✅ 성경 66권 읽어보자 :) 
+<a href="https://imgflip.com/gif/2n5uho"><img src="https://i.imgflip.com/2n5uho.gif" title="made at imgflip.com"/></a>
+ 
+
+
+
 ## 기획의도
 나는 성경의 각 권들을 왔다갔다 하면서 읽어서 성경읽기표가 필요한데  
 다이어리에 끼워두고 다니기도 불편하고, 기존의 성경읽기표 앱들은 너무 안예쁘고 불편.. 광고도 들어가있고  
