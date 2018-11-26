@@ -27,8 +27,6 @@
 		</dict>
 		<key>SwipeCellKit.xcscheme</key>
 		<dict>
-			<key>isShown</key>
-			<false/>
 			<key>orderHint</key>
 			<integer>3</integer>
 		</dict>
