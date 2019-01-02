@@ -10,7 +10,11 @@ import UIKit
 
 class CheckListTableViewCell: UITableViewCell {
     
-    var book = Book()
+    var book = Book(){
+        didSet{
+            updateCell()
+        }
+    }
     
     @IBOutlet weak var bookNameLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
@@ -22,8 +26,9 @@ class CheckListTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         setCollectionView()
+        selectionStyle = UITableViewCell.SelectionStyle.none
     }
-
+    
     
     func setCollectionView(){
         collectionView.register(UINib(nibName: "PageCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "PageCollectionViewCell")
@@ -37,16 +42,13 @@ class CheckListTableViewCell: UITableViewCell {
         }
     }
   
-    class func instanceFromNib( _ book:Book)->CheckListTableViewCell{
-        
-        let cell = UINib(nibName: "CheckListTableViewCell", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! CheckListTableViewCell
-        cell.book = book
-        cell.bookNameLabel.text = book.title
-        cell.collectionView.reloadData()
-        cell.setCollectionViewHeight()
-        cell.selectionStyle = UITableViewCell.SelectionStyle.none
-        return cell
+    func updateCell(){
+        bookNameLabel.text = book.title
+        collectionView.reloadData()
+        setCollectionViewHeight()
+        selectionStyle = UITableViewCell.SelectionStyle.none
     }
+    
 }
 
 

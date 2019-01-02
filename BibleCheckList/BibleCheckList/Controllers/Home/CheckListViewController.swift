@@ -10,8 +10,7 @@ import UIKit
 
 class CheckListViewController: UIViewController {
     
-    var books:[Book] = []
-    var tableViewCells:[CheckListTableViewCell] = []
+    private var books:[Book] = []
     @IBOutlet weak var tableView: UITableView!
     
     @IBOutlet weak var categorySegmentedControl: UISegmentedControl!
@@ -31,12 +30,25 @@ class CheckListViewController: UIViewController {
         return []
     }
     
+    func setTableView(){
+        tableView.estimatedRowHeight = 150
+        tableView.rowHeight = UITableView.automaticDimension
+        
+        tableView.register(UINib(nibName: "CheckListTableViewCell", bundle: nil), forCellReuseIdentifier: "CheckListTableViewCell")
+    }
+    
+    func setTableViewCells(books:[Book]){
+        
+        self.books = books
+        tableView.reloadData()
+        tableView.scrollToRow(at:IndexPath(row: 0, section: 0), at: .top, animated: true)
+    }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setTableView()
         setTableViewCells(books:getBooksOfCategory())
-        // category -> tableviewcells -> tableview reload
     }
     
 }
@@ -44,31 +56,13 @@ class CheckListViewController: UIViewController {
 extension CheckListViewController:UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tableViewCells.count
+        return books.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableViewCells[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CheckListTableViewCell", for: indexPath) as! CheckListTableViewCell
+        cell.book = books[indexPath.row]
         return cell
-    }
-    
-    func setTableView(){
-        tableView.estimatedRowHeight = 150
-        tableView.rowHeight = UITableView.automaticDimension
-    
-    }
-    
-    func setTableViewCells(books:[Book]){
-        self.books = books
-        tableViewCells = []
-        for book in books{
-            let cell = CheckListTableViewCell.instanceFromNib(book)
-            tableViewCells.append(cell)
-        }
-        
-        tableView.reloadData()
-        tableView.scrollToRow(at:IndexPath(row: 0, section: 0), at: .top, animated: true)
-        
     }
     
 }
@@ -99,7 +93,8 @@ extension CheckListViewController:UITableViewDelegate{
             let book = self.books[indexPath.row]
             RealmManager.shared.changeAllRead(title: book.title,isRead:true)
             
-            let cell = self.tableViewCells[indexPath.row]
+            let cell = self.tableView.cellForRow(at: indexPath) as! CheckListTableViewCell
+            //let cell = self.tableViewCells[indexPath.row]
             cell.book = book
             cell.collectionView.reloadData()
             
@@ -118,7 +113,8 @@ extension CheckListViewController:UITableViewDelegate{
             let book = self.books[indexPath.row]
             RealmManager.shared.changeAllRead(title: book.title,isRead:false)
             
-            let cell = self.tableViewCells[indexPath.row]
+            let cell = self.tableView.cellForRow(at: indexPath) as! CheckListTableViewCell
+            //let cell = self.tableViewCells[indexPath.row]
             cell.book = book
             cell.collectionView.reloadData()
             
