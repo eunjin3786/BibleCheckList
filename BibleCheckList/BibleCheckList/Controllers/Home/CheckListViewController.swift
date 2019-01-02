@@ -94,7 +94,6 @@ extension CheckListViewController:UITableViewDelegate{
             RealmManager.shared.changeAllRead(title: book.title,isRead:true)
             
             let cell = self.tableView.cellForRow(at: indexPath) as! CheckListTableViewCell
-            //let cell = self.tableViewCells[indexPath.row]
             cell.book = book
             cell.collectionView.reloadData()
             
@@ -114,7 +113,6 @@ extension CheckListViewController:UITableViewDelegate{
             RealmManager.shared.changeAllRead(title: book.title,isRead:false)
             
             let cell = self.tableView.cellForRow(at: indexPath) as! CheckListTableViewCell
-            //let cell = self.tableViewCells[indexPath.row]
             cell.book = book
             cell.collectionView.reloadData()
             

@@ -20,17 +20,32 @@ class CheckListTableViewCell: UITableViewCell {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var collectionViewHeight: NSLayoutConstraint!
     
-    var estimateWidth = 35.0
-    var cellMarginSize = 3.0
-  
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        setCollectionView()
-        selectionStyle = UITableViewCell.SelectionStyle.none
+    private var estimateWidth = 35.0
+    private var cellMarginSize = 3.0
+    
+    private func calculateWith() -> CGFloat {
+        let estimatedWidth = CGFloat(estimateWidth)
+        let cellCount = floor(CGFloat(collectionView.frame.size.width / estimatedWidth))
+        
+        let margin = CGFloat(cellMarginSize * 2)
+        let width = (collectionView.frame.size.width - CGFloat(cellMarginSize) * (cellCount - 1) - margin) / cellCount
+        
+        return width
     }
     
+    //문제1 : 마지막 인덱스의 아이템의  maxY로 높이를 설정해주면 깔끔한데
+    // se에서는 값을 correct하게 못찾는다 -> stack overflow에 올려보기
+    //https://stackoverflow.com/questions/14674986/uicollectionview-set-number-of-columns
+    private func setCollectionViewHeight(){
+        
+        let lastIndex = IndexPath(item: book.pageList.count-1, section: 0)
+        if let att = collectionView.layoutAttributesForItem(at: lastIndex){
+            collectionViewHeight.constant = att.frame.maxY
+        }
+        
+    }
     
-    func setCollectionView(){
+    private func setCollectionView(){
         collectionView.register(UINib(nibName: "PageCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "PageCollectionViewCell")
         //xib파일에서 오토레이아웃 하려면 설정해주기 :)
         //https://zeddios.tistory.com/474
@@ -42,10 +57,16 @@ class CheckListTableViewCell: UITableViewCell {
         }
     }
   
-    func updateCell(){
+    private func updateCell(){
         bookNameLabel.text = book.title
         collectionView.reloadData()
         setCollectionViewHeight()
+        selectionStyle = UITableViewCell.SelectionStyle.none
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        setCollectionView()
         selectionStyle = UITableViewCell.SelectionStyle.none
     }
     
@@ -90,30 +111,4 @@ extension CheckListTableViewCell:UICollectionViewDelegateFlowLayout{
     }
 
     
-}
-
-
-extension CheckListTableViewCell{
-    
-    func calculateWith() -> CGFloat {
-        let estimatedWidth = CGFloat(estimateWidth)
-        let cellCount = floor(CGFloat(collectionView.frame.size.width / estimatedWidth))
-        
-        let margin = CGFloat(cellMarginSize * 2)
-        let width = (collectionView.frame.size.width - CGFloat(cellMarginSize) * (cellCount - 1) - margin) / cellCount
-        
-        return width
-    }
-
-    //문제1 : 마지막 인덱스의 아이템의  maxY로 높이를 설정해주면 깔끔한데
-    // se에서는 값을 correct하게 못찾는다 -> stack overflow에 올려보기
-    //https://stackoverflow.com/questions/14674986/uicollectionview-set-number-of-columns
-    func setCollectionViewHeight(){
-        
-        let lastIndex = IndexPath(item: book.pageList.count-1, section: 0)
-        if let att = collectionView.layoutAttributesForItem(at: lastIndex){
-            collectionViewHeight.constant = att.frame.maxY
-        }
-        
-    }
 }
