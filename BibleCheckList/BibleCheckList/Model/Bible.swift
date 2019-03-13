@@ -8,7 +8,7 @@
 
 import Foundation
 
-typealias BookTuple = (title:String,numOfpages:Int,category:Category)
+typealias BookTuple = (title: String, numOfpages: Int, category: Category)
 
 struct Bible{
     
@@ -29,14 +29,11 @@ struct Bible{
                     
                     guard let numString = item.getArrayAfterRegex(regex: "[(][(0-9)]+").first, let numOfPages = Int(numString[numString.index(after: numString.startIndex)...]) else{continue}
                     
-                    if title == "잠언" || title == "시편"{
-                        bible.append((title,numOfPages,.daily))
-                    } else if index < newIndex{
+                    if index < newIndex{
                         bible.append((title,numOfPages,.old))
                     } else {
                         bible.append((title,numOfPages,.new))
                     }
-                    
                 }
                 
             } catch {

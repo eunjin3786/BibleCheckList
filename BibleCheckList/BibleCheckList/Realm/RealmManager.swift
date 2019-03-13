@@ -9,17 +9,17 @@
 import Foundation
 import RealmSwift
 
-class RealmManager{
+class RealmManager {
     
     static let shared = RealmManager()
     
     private init(){
-        if !getAllBooks().isEmpty{return}
+        if !getAllBooks().isEmpty { return }
         let bible = Bible.getBibleInfoFromFile()
-        _ = bible.map{addBook($0)}
+        bible.forEach{ addBook($0) }
     }
     
-    func addBook(_ bookTuple:BookTuple){
+    private func addBook(_ bookTuple: BookTuple){
         
         //db에 추가
         let book = Book()
@@ -31,6 +31,11 @@ class RealmManager{
         }
 
         book.category = bookTuple.category.rawValue
+        
+        if book.title == "잠언" || book.title == "시편" {
+            book.isDaily = true
+        }
+        
         book.add()
     }
     
@@ -52,7 +57,7 @@ class RealmManager{
         return bookList
     }
     
-    func getBooksOfCategory(category:String)->[Book]{
+    func getBooksOfCategory(category: String)->[Book]{
         
         var bookList:[Book] = []
         
@@ -98,7 +103,6 @@ class RealmManager{
     }
     
     func changeAllRead(title:String,isRead:Bool){
-        
         do{
             let realm = try Realm()
             let book = realm.objects(Book.self).filter{$0.title == title}.first
@@ -115,5 +119,16 @@ class RealmManager{
             print(error.localizedDescription)
         }
     }
-
+    
+    func changeDaily(title: String, isDaily: Bool) {
+        do{
+            let realm = try Realm()
+            let book = realm.objects(Book.self).filter{$0.title == title}.first
+            try realm.write {
+                book?.isDaily = isDaily
+            }
+        } catch let error as NSError {
+            print(error.localizedDescription)
+        }
+    }
 }

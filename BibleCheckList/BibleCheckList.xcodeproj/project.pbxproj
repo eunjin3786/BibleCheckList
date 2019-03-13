@@ -18,6 +18,7 @@
 		AC648EB4217D946B00377686 /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC648EB3217D946B00377686 /* RealmModel.swift */; };
 		AC6DE1FE21A1CC9500DFD55B /* category_type_1.txt in Resources */ = {isa = PBXBuildFile; fileRef = AC6DE1FD21A1CC9500DFD55B /* category_type_1.txt */; };
 		AC6DE20121A1CD2D00DFD55B /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6DE20021A1CD2D00DFD55B /* String.swift */; };
+		ACACFEF5222FC6CA002C27DB /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACACFEF4222FC6CA002C27DB /* SettingViewController.swift */; };
 		ACB326AA217DC67800BBAC32 /* NanumSquareExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ACB326A6217DC67600BBAC32 /* NanumSquareExtraBold.ttf */; };
 		ACB326AB217DC67800BBAC32 /* NanumSquareLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ACB326A7217DC67600BBAC32 /* NanumSquareLight.ttf */; };
 		ACB326AC217DC67800BBAC32 /* NanumSquareBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ACB326A8217DC67700BBAC32 /* NanumSquareBold.ttf */; };
@@ -27,6 +28,8 @@
 		ACB326B6217DC96400BBAC32 /* CheckListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACB326B4217DC96400BBAC32 /* CheckListTableViewCell.xib */; };
 		ACB326BA217DCDF800BBAC32 /* PageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB326B8217DCDF800BBAC32 /* PageCollectionViewCell.swift */; };
 		ACB326BB217DCDF800BBAC32 /* PageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACB326B9217DCDF800BBAC32 /* PageCollectionViewCell.xib */; };
+		ACC30BDD22376CE6009D5B88 /* SettingCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC30BDC22376CE6009D5B88 /* SettingCollectionReusableView.swift */; };
+		ACC30BE02237736E009D5B88 /* SettingTitleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC30BDF2237736E009D5B88 /* SettingTitleCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +48,7 @@
 		AC648EB3217D946B00377686 /* RealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmModel.swift; sourceTree = "<group>"; };
 		AC6DE1FD21A1CC9500DFD55B /* category_type_1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = category_type_1.txt; sourceTree = "<group>"; };
 		AC6DE20021A1CD2D00DFD55B /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		ACACFEF4222FC6CA002C27DB /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		ACB326A6217DC67600BBAC32 /* NanumSquareExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareExtraBold.ttf; sourceTree = "<group>"; };
 		ACB326A7217DC67600BBAC32 /* NanumSquareLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareLight.ttf; sourceTree = "<group>"; };
 		ACB326A8217DC67700BBAC32 /* NanumSquareBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareBold.ttf; sourceTree = "<group>"; };
@@ -54,6 +58,8 @@
 		ACB326B4217DC96400BBAC32 /* CheckListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckListTableViewCell.xib; sourceTree = "<group>"; };
 		ACB326B8217DCDF800BBAC32 /* PageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageCollectionViewCell.swift; sourceTree = "<group>"; };
 		ACB326B9217DCDF800BBAC32 /* PageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PageCollectionViewCell.xib; sourceTree = "<group>"; };
+		ACC30BDC22376CE6009D5B88 /* SettingCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCollectionReusableView.swift; sourceTree = "<group>"; };
+		ACC30BDF2237736E009D5B88 /* SettingTitleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTitleCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +160,15 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		ACACFEF3222FC69D002C27DB /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				ACACFEF4222FC6CA002C27DB /* SettingViewController.swift */,
+				ACC30BDE2237730F009D5B88 /* Cell */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
 		ACB326A5217DC65A00BBAC32 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -169,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				ACB326B1217DC92E00BBAC32 /* Home */,
+				ACACFEF3222FC69D002C27DB /* Setting */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -199,6 +215,15 @@
 				ACB326B9217DCDF800BBAC32 /* PageCollectionViewCell.xib */,
 			);
 			path = CollectionViewCell;
+			sourceTree = "<group>";
+		};
+		ACC30BDE2237730F009D5B88 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				ACC30BDC22376CE6009D5B88 /* SettingCollectionReusableView.swift */,
+				ACC30BDF2237736E009D5B88 /* SettingTitleCollectionViewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		AE3691AF70D03B6D6CB38374 /* Pods */ = {
@@ -336,8 +361,11 @@
 				AC1E1C2321A3A09300B72AED /* Bible.swift in Sources */,
 				ACB326B0217DC7A900BBAC32 /* CheckListViewController.swift in Sources */,
 				ACB326BA217DCDF800BBAC32 /* PageCollectionViewCell.swift in Sources */,
+				ACACFEF5222FC6CA002C27DB /* SettingViewController.swift in Sources */,
+				ACC30BE02237736E009D5B88 /* SettingTitleCollectionViewCell.swift in Sources */,
 				AC648EB4217D946B00377686 /* RealmModel.swift in Sources */,
 				AC0443A421904E64000313EB /* RealmManager.swift in Sources */,
+				ACC30BDD22376CE6009D5B88 /* SettingCollectionReusableView.swift in Sources */,
 				AC6DE20121A1CD2D00DFD55B /* String.swift in Sources */,
 				AC648EA1217CF40D00377686 /* AppDelegate.swift in Sources */,
 			);
@@ -488,7 +516,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = LK3AE7MHQ3;
+				DEVELOPMENT_TEAM = 6C4YL9RLK7;
 				INFOPLIST_FILE = BibleCheckList/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -510,7 +538,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = LK3AE7MHQ3;
+				DEVELOPMENT_TEAM = 6C4YL9RLK7;
 				INFOPLIST_FILE = BibleCheckList/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (

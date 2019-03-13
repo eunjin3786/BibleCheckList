@@ -16,41 +16,40 @@ class CheckListViewController: UIViewController {
     @IBOutlet weak var categorySegmentedControl: UISegmentedControl!
     
     @IBAction func categorySegmentedControlAction(_ sender: Any) {
-        setTableViewCells(books:getBooksOfCategory())
+        setTableViewCells(books: getBooksOfCategory())
     }
     
-    func getBooksOfCategory()->[Book]{
-        
+    private func getBooksOfCategory()->[Book]{
         let selectedIndex = categorySegmentedControl.selectedSegmentIndex
         if let title = categorySegmentedControl.titleForSegment(at: selectedIndex){
-           let books = RealmManager.shared.getBooksOfCategory(category: title)
-           return books
+            if title == "Daily" {
+                return RealmManager.shared.getAllBooks().filter{ $0.isDaily == true }
+            } else {
+                return RealmManager.shared.getBooksOfCategory(category: title).filter{ $0.isDaily == false }
+            }
         }
-        
         return []
     }
     
-    func setTableView(){
+    private func setTableView(){
         tableView.estimatedRowHeight = 150
         tableView.rowHeight = UITableView.automaticDimension
         
         tableView.register(UINib(nibName: "CheckListTableViewCell", bundle: nil), forCellReuseIdentifier: "CheckListTableViewCell")
     }
     
-    func setTableViewCells(books:[Book]){
-        
+    private func setTableViewCells(books: [Book]){
         self.books = books
         tableView.reloadData()
-        tableView.scrollToRow(at:IndexPath(row: 0, section: 0), at: .top, animated: true)
+        if books.count == 0 { return }
+        tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
     }
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setTableView()
-        setTableViewCells(books:getBooksOfCategory())
+        setTableViewCells(books: getBooksOfCategory())
     }
-    
 }
 
 extension CheckListViewController:UITableViewDataSource{
@@ -84,7 +83,7 @@ extension CheckListViewController:UITableViewDelegate{
         return UISwipeActionsConfiguration(actions: [clear])
     }
     
-    func finishAction(at indexPath:IndexPath) -> UIContextualAction{
+    private func finishAction(at indexPath:IndexPath) -> UIContextualAction{
         
         let action = UIContextualAction(style: .normal, title: "") { [weak self] (action, view, completion) in
             
@@ -103,7 +102,7 @@ extension CheckListViewController:UITableViewDelegate{
         return action
     }
     
-    func clearAction(at indexPath:IndexPath) -> UIContextualAction{
+    private func clearAction(at indexPath:IndexPath) -> UIContextualAction{
         
         let action = UIContextualAction(style: .normal, title: "") { [weak self] (action, view, completion) in
             
@@ -123,7 +122,7 @@ extension CheckListViewController:UITableViewDelegate{
     }
     
     /*
-    func sendAction(at indexPath:IndexPath) -> UIContextualAction{
+    private func sendAction(at indexPath:IndexPath) -> UIContextualAction{
         
         let action = UIContextualAction(style: .normal, title: "") { [weak self] (action, view, completion) in
             
@@ -136,3 +135,26 @@ extension CheckListViewController:UITableViewDelegate{
     }
     */
 }
+
+extension CheckListViewController: SettingDelegate {
+    func settingsDone() {
+        setTableViewCells(books: getBooksOfCategory())
+    }
+}
+
+extension CheckListViewController {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "Setting" {
+            prepareSegueForSettingViewController(segue: segue)
+        }
+    }
+    
+    private func prepareSegueForSettingViewController(segue: UIStoryboardSegue) {
+        guard let vc = segue.destination as? SettingViewController else {
+            fatalError("SettingViewController not found")
+        }
+        
+        vc.delegate = self
+    }
+}
+

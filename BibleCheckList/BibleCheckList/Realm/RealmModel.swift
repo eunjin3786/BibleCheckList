@@ -9,10 +9,9 @@
 import Foundation
 import RealmSwift
 
-enum Category:String{
+enum Category: String, CaseIterable{
     case old = "구약"
     case new = "신약"
-    case daily = "Daily"
 }
 
 class PageObject:Object{
@@ -27,9 +26,10 @@ class PageObject:Object{
 }
 
 class Book:Object{
-    @objc dynamic var title:String = ""
+    @objc dynamic var title = ""
+    @objc dynamic var category = Category.old.rawValue
+    @objc dynamic var isDaily = false
     var pageList = List<PageObject>()
-    @objc dynamic var category:String = Category.old.rawValue
     
     func add() {
         do {
