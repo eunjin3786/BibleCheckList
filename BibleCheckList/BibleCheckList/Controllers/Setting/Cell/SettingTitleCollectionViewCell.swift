@@ -23,11 +23,13 @@ class SettingTitleCollectionViewCell: UICollectionViewCell {
     
     func setupToggleColor(isToggle: Bool) {
         if isToggle {
-            backgroundColor = .lightMint
-            titleLabel.textColor = .white
-        } else {
             backgroundColor = .darkYellow
+            layer.borderWidth = 0
+        } else {
+            backgroundColor = .white
             titleLabel.textColor = .black
+            layer.borderWidth = 1
+            layer.borderColor = UIColor.darkYellow.cgColor
         }
     }
 }
