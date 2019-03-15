@@ -22,7 +22,7 @@ class SettingViewController: UIViewController {
         dismiss(animated: true)
     }
     
-    private var books = RealmManager.shared.getAllBooks()
+    private var settingVM = SettingViewModel()
     var delegate: SettingDelegate?
     
     override func viewDidLoad() {
@@ -33,21 +33,16 @@ class SettingViewController: UIViewController {
 extension SettingViewController: UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return Category.allCases.count
+        return settingVM.categories.count
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
-        let sectionTitle = Category.allCases[section].rawValue
-        let sectionBooks = books.filter { $0.category == sectionTitle }
-        return sectionBooks.count
+        return settingVM.categoryBooks(for: section).count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SettingTitleCollectionViewCell", for: indexPath) as? SettingTitleCollectionViewCell {
-            let sectionTitle = Category.allCases[indexPath.section].rawValue
-            let sectionBooks = books.filter { $0.category == sectionTitle }
-            let book = sectionBooks[indexPath.row]
+            let book = settingVM.book(for: indexPath)
             cell.titleLabel.text = book.title
             cell.setupToggleColor(isToggle: book.isDaily)
             return cell
@@ -58,7 +53,7 @@ extension SettingViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         if let sectionHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "SettingCollectionReusableView", for: indexPath) as? SettingCollectionReusableView{
-            sectionHeader.titleLabel.text = Category.allCases[indexPath.section].rawValue
+            sectionHeader.titleLabel.text = settingVM.categoryTitle(for: indexPath.section)
             return sectionHeader
         }
         return UICollectionReusableView()
