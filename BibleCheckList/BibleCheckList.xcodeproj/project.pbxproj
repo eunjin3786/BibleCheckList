@@ -90,16 +90,10 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		AC04439F219028DD000313EB /* Function */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Function;
-			sourceTree = "<group>";
-		};
 		AC0443A221904E0E000313EB /* Realm */ = {
 			isa = PBXGroup;
 			children = (
+				AC1E1C2221A3A09300B72AED /* Bible.swift */,
 				AC648EB3217D946B00377686 /* RealmModel.swift */,
 				AC0443A321904E64000313EB /* RealmManager.swift */,
 			);
@@ -114,6 +108,17 @@
 				ACB326A5217DC65A00BBAC32 /* Fonts */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		AC541288223BE35B008A155E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				AC541284223BCC04008A155E /* BooksViewModel.swift */,
+				AC541286223BD687008A155E /* BookViewModel.swift */,
+				AC541280223B3E12008A155E /* SettingViewModel.swift */,
+				AC541282223B4D6E008A155E /* SettingTitleViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		AC648E94217CF40D00377686 = {
@@ -140,23 +145,14 @@
 				AC6DE1FF21A1CD1200DFD55B /* Extension */,
 				AC0443A521911362000313EB /* Resource */,
 				AC0443A221904E0E000313EB /* Realm */,
+				AC541288223BE35B008A155E /* ViewModel */,
 				ACB326AE217DC77A00BBAC32 /* Controllers */,
-				AC648EB2217D941D00377686 /* Model */,
-				AC04439F219028DD000313EB /* Function */,
 				AC648EA0217CF40D00377686 /* AppDelegate.swift */,
 				AC648EA4217CF40D00377686 /* Main.storyboard */,
 				AC648EA9217CF41100377686 /* LaunchScreen.storyboard */,
 				AC648EAC217CF41100377686 /* Info.plist */,
 			);
 			path = BibleCheckList;
-			sourceTree = "<group>";
-		};
-		AC648EB2217D941D00377686 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				AC1E1C2221A3A09300B72AED /* Bible.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		AC6DE1FF21A1CD1200DFD55B /* Extension */ = {
@@ -171,7 +167,6 @@
 		ACACFEF3222FC69D002C27DB /* Setting */ = {
 			isa = PBXGroup;
 			children = (
-				AC541280223B3E12008A155E /* SettingViewModel.swift */,
 				ACACFEF4222FC6CA002C27DB /* SettingViewController.swift */,
 				ACC30BDE2237730F009D5B88 /* Cell */,
 			);
@@ -202,7 +197,6 @@
 			isa = PBXGroup;
 			children = (
 				ACB326AF217DC7A900BBAC32 /* CheckListViewController.swift */,
-				AC541284223BCC04008A155E /* BooksViewModel.swift */,
 				ACB326B2217DC93900BBAC32 /* TableViewCell */,
 			);
 			path = Home;
@@ -214,7 +208,6 @@
 				ACB326B3217DC96400BBAC32 /* CheckListTableViewCell.swift */,
 				ACB326B4217DC96400BBAC32 /* CheckListTableViewCell.xib */,
 				ACB326B7217DCDCA00BBAC32 /* CollectionViewCell */,
-				AC541286223BD687008A155E /* BookViewModel.swift */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -231,7 +224,6 @@
 		ACC30BDE2237730F009D5B88 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				AC541282223B4D6E008A155E /* SettingTitleViewModel.swift */,
 				ACC30BDF2237736E009D5B88 /* SettingTitleCollectionViewCell.swift */,
 				ACC30BDC22376CE6009D5B88 /* SettingCollectionReusableView.swift */,
 			);

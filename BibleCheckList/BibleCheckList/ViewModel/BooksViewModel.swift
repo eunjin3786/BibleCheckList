@@ -9,7 +9,6 @@
 import Foundation
 
 struct BooksViewModel {
-    
     private(set) var books: [Book] = []
     
     mutating func setupBooksOfCategory(name: String) {

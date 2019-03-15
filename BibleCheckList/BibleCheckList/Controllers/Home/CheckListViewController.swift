@@ -53,8 +53,8 @@ extension CheckListViewController:UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CheckListTableViewCell", for: indexPath) as! CheckListTableViewCell
-        //REFACTORING
-        cell.book = booksVM.books[indexPath.row]
+        let book = booksVM.books[indexPath.row]
+        cell.configure(vm: BookViewModel(book: book))
         return cell
     }
 }
@@ -81,14 +81,13 @@ extension CheckListViewController:UITableViewDelegate{
         let action = UIContextualAction(style: .normal, title: "") { [weak self] (action, view, completion) in
             
             guard let `self` = self else{return}
-            
             let book = self.booksVM.books[indexPath.row]
-            RealmManager.shared.changeAllRead(title: book.title, isRead:true)
+            let bookVM = BookViewModel(book: book)
+            bookVM.changeAllRead(isRead: true)
             
-            let cell = self.tableView.cellForRow(at: indexPath) as! CheckListTableViewCell
-            cell.book = book
-            cell.collectionView.reloadData()
-            
+            if let cell = self.tableView.cellForRow(at: indexPath) as? CheckListTableViewCell {
+                cell.configure(vm: bookVM)
+            }
         }
         action.backgroundColor = UIColor.darkYellow
         action.image = UIImage(named: "finish")
@@ -100,33 +99,18 @@ extension CheckListViewController:UITableViewDelegate{
         let action = UIContextualAction(style: .normal, title: "") { [weak self] (action, view, completion) in
             
             guard let `self` = self else{return}
-            
             let book = self.booksVM.books[indexPath.row]
-            RealmManager.shared.changeAllRead(title: book.title,isRead:false)
+            let bookVM = BookViewModel(book: book)
+            bookVM.changeAllRead(isRead: false)
             
-            let cell = self.tableView.cellForRow(at: indexPath) as! CheckListTableViewCell
-            cell.book = book
-            cell.collectionView.reloadData()
-            
+            if let cell = self.tableView.cellForRow(at: indexPath) as? CheckListTableViewCell {
+                cell.configure(vm: bookVM)
+            }
         }
         action.backgroundColor = UIColor.red
         action.image = UIImage(named: "refresh")
         return action
     }
-    
-    /*
-    private func sendAction(at indexPath:IndexPath) -> UIContextualAction{
-        
-        let action = UIContextualAction(style: .normal, title: "") { [weak self] (action, view, completion) in
-            
-            guard let `self` = self else{return}
-            
-        }
-        action.backgroundColor = UIColor.lightMint
-        action.image = UIImage(named: "send")
-        return action
-    }
-    */
 }
 
 extension CheckListViewController: SettingDelegate {

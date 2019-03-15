@@ -10,11 +10,7 @@ import UIKit
 
 class CheckListTableViewCell: UITableViewCell {
     
-    var book = Book(){
-        didSet{
-            updateCell()
-        }
-    }
+    private var bookVM: BookViewModel!
     
     @IBOutlet weak var bookNameLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
@@ -33,20 +29,15 @@ class CheckListTableViewCell: UITableViewCell {
         return width
     }
     
-    //문제1 : 마지막 인덱스의 아이템의  maxY로 높이를 설정해주면 깔끔한데
-    // se에서는 값을 correct하게 못찾는다 -> stack overflow에 올려보기
-    //https://stackoverflow.com/questions/14674986/uicollectionview-set-number-of-columns
-    private func setCollectionViewHeight(){
-        let lastIndex = IndexPath(item: book.pageList.count-1, section: 0)
+    private func setupCollectionViewHeight(){
+        let lastIndex = IndexPath(item: bookVM.book.pageList.count-1, section: 0)
         if let att = collectionView.layoutAttributesForItem(at: lastIndex){
             collectionViewHeight.constant = att.frame.maxY
         }
     }
     
-    private func setCollectionView(){
+    private func setupCollectionView(){
         collectionView.register(UINib(nibName: "PageCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "PageCollectionViewCell")
-        //xib파일에서 오토레이아웃 하려면 설정해주기 :)
-        //https://zeddios.tistory.com/474
         self.translatesAutoresizingMaskIntoConstraints = false
         
         if let flow = collectionView.collectionViewLayout as? UICollectionViewFlowLayout{
@@ -54,18 +45,17 @@ class CheckListTableViewCell: UITableViewCell {
             flow.minimumLineSpacing = CGFloat(self.cellMarginSize)
         }
     }
-  
-    private func updateCell(){
-        bookNameLabel.text = book.title
-        collectionView.reloadData()
-        setCollectionViewHeight()
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        setupCollectionView()
         selectionStyle = UITableViewCell.SelectionStyle.none
     }
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        setCollectionView()
-        selectionStyle = UITableViewCell.SelectionStyle.none
+    func configure(vm: BookViewModel) {
+        bookVM = vm
+        bookNameLabel.text = vm.book.title
+        collectionView.reloadData()
+        setupCollectionViewHeight()
     }
 }
 
@@ -73,16 +63,16 @@ class CheckListTableViewCell: UITableViewCell {
 extension CheckListTableViewCell:UICollectionViewDataSource{
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return book.pageList.count
+        return bookVM.book.pageList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PageCollectionViewCell", for: indexPath) as? PageCollectionViewCell else{
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PageCollectionViewCell", for: indexPath) as? PageCollectionViewCell else {
             return UICollectionViewCell()
         }
         
-        let page = book.pageList[indexPath.row]
+        let page = bookVM.book.pageList[indexPath.row]
         cell.configure(page: page)
         return cell
     }
@@ -96,11 +86,12 @@ extension CheckListTableViewCell:UICollectionViewDelegateFlowLayout{
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let page = book.pageList[indexPath.row]
-        RealmManager.shared.changeIsReadOfPage(title: book.title, pageNumber: page.pageNumber, isRead: !page.isRead)
-
+        
+        let page = bookVM.book.pageList[indexPath.row]
+        bookVM.changeIsReadOfPage(page: page)
+        
         if let cell = collectionView.cellForItem(at: indexPath) as? PageCollectionViewCell{
-            cell.toggle(isRead:page.isRead)
+            cell.toggle(isRead: page.isRead)
         }
     }
 }

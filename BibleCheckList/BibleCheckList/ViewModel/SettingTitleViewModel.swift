@@ -10,6 +10,7 @@ import Foundation
 
 struct SettingTitleViewModel {
     let book: Book
+    
     init(book: Book) {
         self.book = book
     }
