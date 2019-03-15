@@ -10,7 +10,7 @@ import Foundation
 
 typealias BookTuple = (title: String, numOfpages: Int, category: Category)
 
-struct Bible{
+struct Bible {
     
     static func getBibleInfoFromFile() -> [BookTuple]{
         var bible:[BookTuple] = []

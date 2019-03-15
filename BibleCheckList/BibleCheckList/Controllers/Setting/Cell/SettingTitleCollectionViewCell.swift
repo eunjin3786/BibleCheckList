@@ -9,19 +9,18 @@
 import UIKit
 
 class SettingTitleCollectionViewCell: UICollectionViewCell {
+    
     @IBOutlet weak var titleLabel: UILabel!
     private var isToggle = false
+    private var settingTitleVM: SettingTitleViewModel?
     
     func toggle() {
         isToggle = !isToggle
         setupToggleColor(isToggle: isToggle)
-        
-        if let title = titleLabel.text {
-            RealmManager.shared.changeDaily(title: title, isDaily: isToggle)
-        }
+        settingTitleVM?.changeIsDaily(on: isToggle)
     }
     
-    func setupToggleColor(isToggle: Bool) {
+    private func setupToggleColor(isToggle: Bool) {
         if isToggle {
             backgroundColor = .darkYellow
             layer.borderWidth = 0
@@ -31,5 +30,11 @@ class SettingTitleCollectionViewCell: UICollectionViewCell {
             layer.borderWidth = 1
             layer.borderColor = UIColor.darkYellow.cgColor
         }
+    }
+    
+    func configure(vm: SettingTitleViewModel) {
+        settingTitleVM = vm
+        titleLabel.text = vm.book.title
+        setupToggleColor(isToggle: vm.book.isDaily)
     }
 }

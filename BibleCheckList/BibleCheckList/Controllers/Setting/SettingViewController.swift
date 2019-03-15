@@ -43,8 +43,7 @@ extension SettingViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SettingTitleCollectionViewCell", for: indexPath) as? SettingTitleCollectionViewCell {
             let book = settingVM.book(for: indexPath)
-            cell.titleLabel.text = book.title
-            cell.setupToggleColor(isToggle: book.isDaily)
+            cell.configure(vm: SettingTitleViewModel(book: book))
             return cell
         }
         

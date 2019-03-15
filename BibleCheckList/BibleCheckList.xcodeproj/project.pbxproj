@@ -12,6 +12,7 @@
 		AC0443A7219113AD000313EB /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0443A6219113AD000313EB /* UIColor.swift */; };
 		AC1E1C2321A3A09300B72AED /* Bible.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1E1C2221A3A09300B72AED /* Bible.swift */; };
 		AC541281223B3E12008A155E /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC541280223B3E12008A155E /* SettingViewModel.swift */; };
+		AC541283223B4D6E008A155E /* SettingTitleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC541282223B4D6E008A155E /* SettingTitleViewModel.swift */; };
 		AC648EA1217CF40D00377686 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC648EA0217CF40D00377686 /* AppDelegate.swift */; };
 		AC648EA6217CF40D00377686 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC648EA4217CF40D00377686 /* Main.storyboard */; };
 		AC648EA8217CF41100377686 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC648EA7217CF41100377686 /* Assets.xcassets */; };
@@ -41,6 +42,7 @@
 		AC0443A6219113AD000313EB /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		AC1E1C2221A3A09300B72AED /* Bible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bible.swift; sourceTree = "<group>"; };
 		AC541280223B3E12008A155E /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
+		AC541282223B4D6E008A155E /* SettingTitleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTitleViewModel.swift; sourceTree = "<group>"; };
 		AC648E9D217CF40D00377686 /* BibleCheckList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BibleCheckList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC648EA0217CF40D00377686 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AC648EA5217CF40D00377686 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -165,8 +167,8 @@
 		ACACFEF3222FC69D002C27DB /* Setting */ = {
 			isa = PBXGroup;
 			children = (
-				ACACFEF4222FC6CA002C27DB /* SettingViewController.swift */,
 				AC541280223B3E12008A155E /* SettingViewModel.swift */,
+				ACACFEF4222FC6CA002C27DB /* SettingViewController.swift */,
 				ACC30BDE2237730F009D5B88 /* Cell */,
 			);
 			path = Setting;
@@ -223,8 +225,9 @@
 		ACC30BDE2237730F009D5B88 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				ACC30BDC22376CE6009D5B88 /* SettingCollectionReusableView.swift */,
+				AC541282223B4D6E008A155E /* SettingTitleViewModel.swift */,
 				ACC30BDF2237736E009D5B88 /* SettingTitleCollectionViewCell.swift */,
+				ACC30BDC22376CE6009D5B88 /* SettingCollectionReusableView.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -365,6 +368,7 @@
 				AC541281223B3E12008A155E /* SettingViewModel.swift in Sources */,
 				ACB326B0217DC7A900BBAC32 /* CheckListViewController.swift in Sources */,
 				ACB326BA217DCDF800BBAC32 /* PageCollectionViewCell.swift in Sources */,
+				AC541283223B4D6E008A155E /* SettingTitleViewModel.swift in Sources */,
 				ACACFEF5222FC6CA002C27DB /* SettingViewController.swift in Sources */,
 				ACC30BE02237736E009D5B88 /* SettingTitleCollectionViewCell.swift in Sources */,
 				AC648EB4217D946B00377686 /* RealmModel.swift in Sources */,
