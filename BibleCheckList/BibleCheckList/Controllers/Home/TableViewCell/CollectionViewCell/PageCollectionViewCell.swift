@@ -17,12 +17,16 @@ class PageCollectionViewCell: UICollectionViewCell {
         // Initialization code
     }
     
-    func toggle(isRead:Bool){
+    func toggle(isRead: Bool){
         if isRead{
             self.backgroundColor = UIColor.darkYellow
         } else {
             self.backgroundColor = UIColor.whiteGray
         }
     }
-
+    
+    func configure(page: PageObject) {
+        pageNumberLabel.text = page.pageNumber
+        toggle(isRead: page.isRead)
+    }
 }

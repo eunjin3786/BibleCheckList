@@ -13,6 +13,8 @@
 		AC1E1C2321A3A09300B72AED /* Bible.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1E1C2221A3A09300B72AED /* Bible.swift */; };
 		AC541281223B3E12008A155E /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC541280223B3E12008A155E /* SettingViewModel.swift */; };
 		AC541283223B4D6E008A155E /* SettingTitleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC541282223B4D6E008A155E /* SettingTitleViewModel.swift */; };
+		AC541285223BCC04008A155E /* BooksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC541284223BCC04008A155E /* BooksViewModel.swift */; };
+		AC541287223BD687008A155E /* BookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC541286223BD687008A155E /* BookViewModel.swift */; };
 		AC648EA1217CF40D00377686 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC648EA0217CF40D00377686 /* AppDelegate.swift */; };
 		AC648EA6217CF40D00377686 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC648EA4217CF40D00377686 /* Main.storyboard */; };
 		AC648EA8217CF41100377686 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC648EA7217CF41100377686 /* Assets.xcassets */; };
@@ -43,6 +45,8 @@
 		AC1E1C2221A3A09300B72AED /* Bible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bible.swift; sourceTree = "<group>"; };
 		AC541280223B3E12008A155E /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
 		AC541282223B4D6E008A155E /* SettingTitleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTitleViewModel.swift; sourceTree = "<group>"; };
+		AC541284223BCC04008A155E /* BooksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksViewModel.swift; sourceTree = "<group>"; };
+		AC541286223BD687008A155E /* BookViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookViewModel.swift; sourceTree = "<group>"; };
 		AC648E9D217CF40D00377686 /* BibleCheckList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BibleCheckList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC648EA0217CF40D00377686 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AC648EA5217CF40D00377686 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -198,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				ACB326AF217DC7A900BBAC32 /* CheckListViewController.swift */,
+				AC541284223BCC04008A155E /* BooksViewModel.swift */,
 				ACB326B2217DC93900BBAC32 /* TableViewCell */,
 			);
 			path = Home;
@@ -209,6 +214,7 @@
 				ACB326B3217DC96400BBAC32 /* CheckListTableViewCell.swift */,
 				ACB326B4217DC96400BBAC32 /* CheckListTableViewCell.xib */,
 				ACB326B7217DCDCA00BBAC32 /* CollectionViewCell */,
+				AC541286223BD687008A155E /* BookViewModel.swift */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -367,6 +373,7 @@
 				AC1E1C2321A3A09300B72AED /* Bible.swift in Sources */,
 				AC541281223B3E12008A155E /* SettingViewModel.swift in Sources */,
 				ACB326B0217DC7A900BBAC32 /* CheckListViewController.swift in Sources */,
+				AC541287223BD687008A155E /* BookViewModel.swift in Sources */,
 				ACB326BA217DCDF800BBAC32 /* PageCollectionViewCell.swift in Sources */,
 				AC541283223B4D6E008A155E /* SettingTitleViewModel.swift in Sources */,
 				ACACFEF5222FC6CA002C27DB /* SettingViewController.swift in Sources */,
@@ -375,6 +382,7 @@
 				AC0443A421904E64000313EB /* RealmManager.swift in Sources */,
 				ACC30BDD22376CE6009D5B88 /* SettingCollectionReusableView.swift in Sources */,
 				AC6DE20121A1CD2D00DFD55B /* String.swift in Sources */,
+				AC541285223BCC04008A155E /* BooksViewModel.swift in Sources */,
 				AC648EA1217CF40D00377686 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -25,7 +25,7 @@ class PageObject:Object{
     }
 }
 
-class Book:Object{
+class Book: Object{
     @objc dynamic var title = ""
     @objc dynamic var category = Category.old.rawValue
     @objc dynamic var isDaily = false

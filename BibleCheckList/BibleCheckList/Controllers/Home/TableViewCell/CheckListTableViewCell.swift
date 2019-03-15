@@ -37,12 +37,10 @@ class CheckListTableViewCell: UITableViewCell {
     // se에서는 값을 correct하게 못찾는다 -> stack overflow에 올려보기
     //https://stackoverflow.com/questions/14674986/uicollectionview-set-number-of-columns
     private func setCollectionViewHeight(){
-        
         let lastIndex = IndexPath(item: book.pageList.count-1, section: 0)
         if let att = collectionView.layoutAttributesForItem(at: lastIndex){
             collectionViewHeight.constant = att.frame.maxY
         }
-        
     }
     
     private func setCollectionView(){
@@ -69,7 +67,6 @@ class CheckListTableViewCell: UITableViewCell {
         setCollectionView()
         selectionStyle = UITableViewCell.SelectionStyle.none
     }
-    
 }
 
 
@@ -86,11 +83,9 @@ extension CheckListTableViewCell:UICollectionViewDataSource{
         }
         
         let page = book.pageList[indexPath.row]
-        cell.pageNumberLabel.text = page.pageNumber
-        cell.toggle(isRead: page.isRead)
+        cell.configure(page: page)
         return cell
     }
-    
 }
 
 extension CheckListTableViewCell:UICollectionViewDelegateFlowLayout{
@@ -107,8 +102,5 @@ extension CheckListTableViewCell:UICollectionViewDelegateFlowLayout{
         if let cell = collectionView.cellForItem(at: indexPath) as? PageCollectionViewCell{
             cell.toggle(isRead:page.isRead)
         }
-        
     }
-
-    
 }

@@ -10,60 +10,53 @@ import UIKit
 
 class CheckListViewController: UIViewController {
     
-    private var books:[Book] = []
+    private var booksVM = BooksViewModel()
+    
     @IBOutlet weak var tableView: UITableView!
-    
     @IBOutlet weak var categorySegmentedControl: UISegmentedControl!
-    
     @IBAction func categorySegmentedControlAction(_ sender: Any) {
-        setTableViewCells(books: getBooksOfCategory())
+        setupSegmentedControl()
     }
     
-    private func getBooksOfCategory()->[Book]{
+    private func setupSegmentedControl() {
         let selectedIndex = categorySegmentedControl.selectedSegmentIndex
         if let title = categorySegmentedControl.titleForSegment(at: selectedIndex){
-            if title == "Daily" {
-                return RealmManager.shared.getAllBooks().filter{ $0.isDaily == true }
-            } else {
-                return RealmManager.shared.getBooksOfCategory(category: title).filter{ $0.isDaily == false }
-            }
+            booksVM.setupBooksOfCategory(name: title)
+            reloadTableView()
         }
-        return []
     }
     
-    private func setTableView(){
+    private func setupTableView() {
         tableView.estimatedRowHeight = 150
         tableView.rowHeight = UITableView.automaticDimension
-        
         tableView.register(UINib(nibName: "CheckListTableViewCell", bundle: nil), forCellReuseIdentifier: "CheckListTableViewCell")
     }
     
-    private func setTableViewCells(books: [Book]){
-        self.books = books
+    private func reloadTableView(){
         tableView.reloadData()
-        if books.count == 0 { return }
+        if booksVM.books.count == 0 { return }
         tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setTableView()
-        setTableViewCells(books: getBooksOfCategory())
+        setupTableView()
+        setupSegmentedControl()
     }
 }
 
 extension CheckListViewController:UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return books.count
+        return booksVM.books.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CheckListTableViewCell", for: indexPath) as! CheckListTableViewCell
-        cell.book = books[indexPath.row]
+        //REFACTORING
+        cell.book = booksVM.books[indexPath.row]
         return cell
     }
-    
 }
 
 
@@ -83,14 +76,14 @@ extension CheckListViewController:UITableViewDelegate{
         return UISwipeActionsConfiguration(actions: [clear])
     }
     
-    private func finishAction(at indexPath:IndexPath) -> UIContextualAction{
+    private func finishAction(at indexPath: IndexPath) -> UIContextualAction{
         
         let action = UIContextualAction(style: .normal, title: "") { [weak self] (action, view, completion) in
             
             guard let `self` = self else{return}
             
-            let book = self.books[indexPath.row]
-            RealmManager.shared.changeAllRead(title: book.title,isRead:true)
+            let book = self.booksVM.books[indexPath.row]
+            RealmManager.shared.changeAllRead(title: book.title, isRead:true)
             
             let cell = self.tableView.cellForRow(at: indexPath) as! CheckListTableViewCell
             cell.book = book
@@ -108,7 +101,7 @@ extension CheckListViewController:UITableViewDelegate{
             
             guard let `self` = self else{return}
             
-            let book = self.books[indexPath.row]
+            let book = self.booksVM.books[indexPath.row]
             RealmManager.shared.changeAllRead(title: book.title,isRead:false)
             
             let cell = self.tableView.cellForRow(at: indexPath) as! CheckListTableViewCell
@@ -138,7 +131,7 @@ extension CheckListViewController:UITableViewDelegate{
 
 extension CheckListViewController: SettingDelegate {
     func settingsDone() {
-        setTableViewCells(books: getBooksOfCategory())
+        setupSegmentedControl()
     }
 }
 
