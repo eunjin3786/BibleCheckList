@@ -15,8 +15,8 @@ protocol SettingDelegate{
     func settingsDone()
 }
 
-typealias SettingModel = SectionModel<String, Book>
-typealias SettingDataSource = RxCollectionViewSectionedReloadDataSource<SettingModel>
+typealias SettingSectionModel = SectionModel<String, Book>
+typealias SettingDataSource = RxCollectionViewSectionedReloadDataSource<SettingSectionModel>
 
 class SettingViewController: UIViewController {
     
@@ -41,7 +41,7 @@ class SettingViewController: UIViewController {
     
     private func bindCollectionView() {
         let sections = settingVM.categories.map {
-            return SettingModel(model: $0.rawValue, items: settingVM.categoryBooks(for: $0.rawValue))
+            return SettingSectionModel(model: $0.rawValue, items: settingVM.categoryBooks(for: $0.rawValue))
         }
         Observable.just(sections)
             .bind(to: collectionView.rx.items(dataSource: settingDatasource))
