@@ -7,15 +7,16 @@
 //
 
 import Foundation
+import RxSwift
 
 struct BooksViewModel {
-    private(set) var books: [Book] = []
+    private(set) var books = Variable.init([Book]())
     
     mutating func setupBooksOfCategory(name: String) {
         if name == "Daily" {
-            books =  RealmManager.shared.getAllBooks().filter{ $0.isDaily == true }
+            books.value =  RealmManager.shared.getAllBooks().filter{ $0.isDaily == true }
         } else {
-            books = RealmManager.shared.getBooksOfCategory(category: name).filter{ $0.isDaily == false }
+            books.value = RealmManager.shared.getBooksOfCategory(category: name).filter{ $0.isDaily == false }
         }
     }
 }

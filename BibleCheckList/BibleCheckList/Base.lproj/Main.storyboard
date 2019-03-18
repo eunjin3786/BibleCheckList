@@ -27,10 +27,6 @@
                                 <rect key="frame" x="0.0" y="132" width="375" height="597"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="gzh-zC-Fj1"/>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="dzX-FG-BZF"/>
-                                </connections>
                             </tableView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="vHT-Zo-rBC">
                                 <rect key="frame" x="16" y="89" width="343" height="29"/>

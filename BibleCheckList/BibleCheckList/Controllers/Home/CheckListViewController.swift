@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class CheckListViewController: UIViewController {
     
@@ -18,11 +20,13 @@ class CheckListViewController: UIViewController {
         setupSegmentedControl()
     }
     
+    let bag = DisposeBag()
+    
     private func setupSegmentedControl() {
         let selectedIndex = categorySegmentedControl.selectedSegmentIndex
         if let title = categorySegmentedControl.titleForSegment(at: selectedIndex){
             booksVM.setupBooksOfCategory(name: title)
-            reloadTableView()
+            scrollToTop()
         }
     }
     
@@ -30,37 +34,32 @@ class CheckListViewController: UIViewController {
         tableView.estimatedRowHeight = 150
         tableView.rowHeight = UITableView.automaticDimension
         tableView.register(UINib(nibName: "CheckListTableViewCell", bundle: nil), forCellReuseIdentifier: "CheckListTableViewCell")
+        tableView.rx.setDelegate(self).disposed(by: bag)
     }
     
-    private func reloadTableView(){
-        tableView.reloadData()
-        if booksVM.books.count == 0 { return }
+    private func scrollToTop(){
+        if booksVM.books.value.count == 0 { return }
         tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
+        bindTableView()
         setupSegmentedControl()
     }
-}
-
-extension CheckListViewController:UITableViewDataSource{
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return booksVM.books.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CheckListTableViewCell", for: indexPath) as! CheckListTableViewCell
-        let book = booksVM.books[indexPath.row]
-        cell.configure(vm: BookViewModel(book: book))
-        return cell
+    private func bindTableView() {
+        booksVM.books.asObservable().bind(to: tableView.rx.items) { (tableView, index, book) -> UITableViewCell in
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "CheckListTableViewCell") as? CheckListTableViewCell else { return UITableViewCell() }
+            let book = self.booksVM.books.value[index]
+            cell.configure(vm: BookViewModel(book: book))
+            return cell
+        }.disposed(by: bag)
     }
 }
 
-
-extension CheckListViewController:UITableViewDelegate{
+extension CheckListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
@@ -81,7 +80,7 @@ extension CheckListViewController:UITableViewDelegate{
         let action = UIContextualAction(style: .normal, title: "") { [weak self] (action, view, completion) in
             
             guard let `self` = self else{return}
-            let book = self.booksVM.books[indexPath.row]
+            let book = self.booksVM.books.value[indexPath.row]
             let bookVM = BookViewModel(book: book)
             bookVM.changeAllRead(isRead: true)
             
@@ -99,7 +98,7 @@ extension CheckListViewController:UITableViewDelegate{
         let action = UIContextualAction(style: .normal, title: "") { [weak self] (action, view, completion) in
             
             guard let `self` = self else{return}
-            let book = self.booksVM.books[indexPath.row]
+            let book = self.booksVM.books.value[indexPath.row]
             let bookVM = BookViewModel(book: book)
             bookVM.changeAllRead(isRead: false)
             
