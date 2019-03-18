@@ -15,6 +15,9 @@ protocol SettingDelegate{
     func settingsDone()
 }
 
+typealias SettingModel = SectionModel<String, Book>
+typealias SettingDataSource = RxCollectionViewSectionedReloadDataSource<SettingModel>
+
 class SettingViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
@@ -28,37 +31,39 @@ class SettingViewController: UIViewController {
     private var settingVM = SettingViewModel()
     var delegate: SettingDelegate?
     
+    let bag = DisposeBag()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-}
-
-extension SettingViewController: UICollectionViewDataSource {
-    
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return settingVM.categories.count
+        collectionView.rx.setDelegate(self).disposed(by: bag)
+        bindCollectionView()
     }
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return settingVM.categoryBooks(for: section).count
+    private func bindCollectionView() {
+        let sections = settingVM.categories.map {
+            return SettingModel(model: $0.rawValue, items: settingVM.categoryBooks(for: $0.rawValue))
+        }
+        Observable.just(sections)
+            .bind(to: collectionView.rx.items(dataSource: settingDatasource))
+            .disposed(by: bag)
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SettingTitleCollectionViewCell", for: indexPath) as? SettingTitleCollectionViewCell {
-            let book = settingVM.book(for: indexPath)
+    private var settingDatasource: SettingDataSource {
+        let datasource = SettingDataSource.init(configureCell: { (datasource, collectionView, indexPath, book) -> UICollectionViewCell in
+            
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SettingTitleCollectionViewCell", for: indexPath) as? SettingTitleCollectionViewCell else { return UICollectionViewCell() }
+            let book = self.settingVM.book(for: indexPath)
             cell.configure(vm: SettingTitleViewModel(book: book))
             return cell
+        })
+        datasource.configureSupplementaryView = { (datasource, collectionView, kind, indexPath) in
+            if let sectionHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "SettingCollectionReusableView", for: indexPath) as? SettingCollectionReusableView{
+                sectionHeader.titleLabel.text = self.settingVM.categories[indexPath.section].rawValue
+                return sectionHeader
+            }
+            return UICollectionReusableView()
         }
-        
-        return UICollectionViewCell() 
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        if let sectionHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "SettingCollectionReusableView", for: indexPath) as? SettingCollectionReusableView{
-            sectionHeader.titleLabel.text = settingVM.categoryTitle(for: indexPath.section)
-            return sectionHeader
-        }
-        return UICollectionReusableView()
+        return datasource
     }
 }
 

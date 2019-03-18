@@ -11,16 +11,13 @@ import Foundation
 struct SettingViewModel {
     let books = RealmManager.shared.getAllBooks()
     let categories = Category.allCases
-    
-    func categoryTitle(for index: Int) -> String {
-        return categories[index].rawValue
-    }
-    
-    func categoryBooks(for index: Int) -> [Book] {
-        return books.filter { $0.category == categoryTitle(for: index) }
-    }
-    
+
     func book(for indexPath: IndexPath) -> Book {
-        return categoryBooks(for: indexPath.section)[indexPath.row]
+        let sectionName = categories[indexPath.section].rawValue
+        return categoryBooks(for: sectionName)[indexPath.row]
+    }
+    
+    func categoryBooks(for name: String) -> [Book] {
+        return books.filter { $0.category == name }
     }
 }

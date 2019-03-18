@@ -157,10 +157,6 @@
                                         <outlet property="titleLabel" destination="eLN-Wt-sNL" id="JTU-DY-3rt"/>
                                     </connections>
                                 </collectionReusableView>
-                                <connections>
-                                    <outlet property="dataSource" destination="GvL-Us-S6Q" id="jEQ-oB-k4f"/>
-                                    <outlet property="delegate" destination="GvL-Us-S6Q" id="0SH-l6-KCk"/>
-                                </connections>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
