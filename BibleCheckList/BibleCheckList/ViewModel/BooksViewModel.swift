@@ -10,7 +10,7 @@ import Foundation
 import RxSwift
 
 struct BooksViewModel {
-    private(set) var books = Variable.init([Book]())
+    let books = Variable.init([Book]())
     
     mutating func setupBooksOfCategory(name: String) {
         if name == "Daily" {

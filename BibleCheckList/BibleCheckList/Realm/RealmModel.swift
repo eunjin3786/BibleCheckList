@@ -14,7 +14,7 @@ enum Category: String, CaseIterable{
     case new = "신약"
 }
 
-class PageObject:Object{
+class PageObject:Object {
     @objc dynamic var pageNumber:String = ""
     @objc dynamic var isRead:Bool = false
     

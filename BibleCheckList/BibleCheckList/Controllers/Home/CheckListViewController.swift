@@ -53,7 +53,7 @@ class CheckListViewController: UIViewController {
         booksVM.books.asObservable().bind(to: tableView.rx.items) { (tableView, index, book) -> UITableViewCell in
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "CheckListTableViewCell") as? CheckListTableViewCell else { return UITableViewCell() }
             let book = self.booksVM.books.value[index]
-            cell.configure(vm: BookViewModel(book: book))
+            cell.configure(book: book)
             return cell
         }.disposed(by: bag)
     }
@@ -71,7 +71,6 @@ extension CheckListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
         let clear = clearAction(at:indexPath)
-        //let send = sendAction(at: indexPath)
         return UISwipeActionsConfiguration(actions: [clear])
     }
     
@@ -81,11 +80,9 @@ extension CheckListViewController: UITableViewDelegate {
             
             guard let `self` = self else{return}
             let book = self.booksVM.books.value[indexPath.row]
-            let bookVM = BookViewModel(book: book)
-            bookVM.changeAllRead(isRead: true)
-            
             if let cell = self.tableView.cellForRow(at: indexPath) as? CheckListTableViewCell {
-                cell.configure(vm: bookVM)
+                cell.bookVM.changeAllRead(isRead: true)
+                cell.configure(book: book)
             }
         }
         action.backgroundColor = UIColor.darkYellow
@@ -99,11 +96,9 @@ extension CheckListViewController: UITableViewDelegate {
             
             guard let `self` = self else{return}
             let book = self.booksVM.books.value[indexPath.row]
-            let bookVM = BookViewModel(book: book)
-            bookVM.changeAllRead(isRead: false)
-            
             if let cell = self.tableView.cellForRow(at: indexPath) as? CheckListTableViewCell {
-                cell.configure(vm: bookVM)
+                cell.bookVM.changeAllRead(isRead: false)
+                cell.configure(book: book)
             }
         }
         action.backgroundColor = UIColor.red

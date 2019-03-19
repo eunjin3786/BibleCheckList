@@ -42,7 +42,7 @@ class RealmManager {
     
     func getAllBooks()->[Book]{
         
-        var bookList:[Book] = []
+        var bookList: [Book] = []
         
         do {
             let realm = try Realm()
