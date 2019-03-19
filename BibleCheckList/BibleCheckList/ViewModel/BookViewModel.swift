@@ -16,7 +16,7 @@ struct BookViewModel {
     }
     
     func changeAllRead(isRead: Bool) {
-        RealmManager.shared.changeAllRead(title: book.title, isRead: true)
+        RealmManager.shared.changeAllRead(title: book.title, isRead: isRead)
     }
     
     func changeIsReadOfPage(page: PageObject) {
