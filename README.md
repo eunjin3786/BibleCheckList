@@ -16,9 +16,8 @@
 <a href="https://imgflip.com/gif/2n5tr4"><img src="https://i.imgflip.com/2n5tr4.gif" title="made at imgflip.com"/></a> 
 
 
-
-
-
+#### ✅ 설정에 들어가서 현재 읽고 있는 권을 Daily로 빼기  
+<a href="https://imgflip.com/gif/2wnkuh"><img src="https://i.imgflip.com/2wnkuh.gif" title="made at imgflip.com"/></a>
 
 
 #### ✅ 성경 66권 읽어보자 :) 
