@@ -41,26 +41,8 @@
     * title
     * PageObject(pageNumber와 isRead로 구성)의 배열
     * catergory (구약/신약 등) 
-    
-    
-    
-## 기획 & UI 
-
-### 1차 버전(은진 사용용)
-
-* 탭 메뉴에는 Daily(잠언&시편) / 구약(-잠언&시편) / 신약 들어간다  
-
-### 2차 버전(배포용)
-
-* 탭을 구성할 수 있게 해주고 안에 들어갈 성경 각 권들도 구성할 수 있게 해준다
-* 귀찮은 사람들을 위해 여러 테마도 함께 제공한다 
-* 가로로 뒤집으면 한눈에 보여지게 
-* 드래드해서 CELL의 순서를 바꿀수있는 reorderable tableview 만들기 
-* key color 설정해서 색깔바뀔수있게 
-
-* 공부한 것을 적용해보기 위해 RX / MVVM / 완전완전 FP 로도 해보기 :) 
-
-
+    * isDaily (Daily탭에 추가되었는지)
+ 
 
 ## 개발 
 
@@ -69,8 +51,3 @@
   * name
   * totalPageCount만큼 collectionViewCell을 가진 collectionView 
 
-  
-* 사용자가 collectionviewCell을 터치할때마다 색칠  
-  토글 버튼 식으로 하는게 좋을듯?!?! 
-    
- 
