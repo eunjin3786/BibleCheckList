@@ -33,7 +33,7 @@ class CheckListViewController: UIViewController {
     private func setupTableView() {
         tableView.estimatedRowHeight = 150
         tableView.rowHeight = UITableView.automaticDimension
-        tableView.register(UINib(nibName: "CheckListTableViewCell", bundle: nil), forCellReuseIdentifier: "CheckListTableViewCell")
+        tableView.register(UINib(nibName: "BookTableViewCell", bundle: nil), forCellReuseIdentifier: "BookTableViewCell")
         tableView.rx.setDelegate(self).disposed(by: bag)
     }
     
@@ -51,7 +51,8 @@ class CheckListViewController: UIViewController {
     
     private func bindTableView() {
         booksVM.books.asObservable().bind(to: tableView.rx.items) { (tableView, index, book) -> UITableViewCell in
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "CheckListTableViewCell") as? CheckListTableViewCell else { return UITableViewCell() }
+            print()
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "BookTableViewCell") as? BookTableViewCell else { return UITableViewCell() }
             let book = self.booksVM.books.value[index]
             cell.configure(vm: BookViewModel(book: book))
             return cell
@@ -84,7 +85,7 @@ extension CheckListViewController: UITableViewDelegate {
             let bookVM = BookViewModel(book: book)
             bookVM.changeAllRead(isRead: true)
             
-            if let cell = self.tableView.cellForRow(at: indexPath) as? CheckListTableViewCell {
+            if let cell = self.tableView.cellForRow(at: indexPath) as? BookTableViewCell {
                 cell.configure(vm: bookVM)
             }
         }
@@ -102,7 +103,7 @@ extension CheckListViewController: UITableViewDelegate {
             let bookVM = BookViewModel(book: book)
             bookVM.changeAllRead(isRead: false)
             
-            if let cell = self.tableView.cellForRow(at: indexPath) as? CheckListTableViewCell {
+            if let cell = self.tableView.cellForRow(at: indexPath) as? BookTableViewCell {
                 cell.configure(vm: bookVM)
             }
         }

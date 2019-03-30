@@ -28,8 +28,8 @@
 		ACB326AC217DC67800BBAC32 /* NanumSquareBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ACB326A8217DC67700BBAC32 /* NanumSquareBold.ttf */; };
 		ACB326AD217DC67800BBAC32 /* NanumSquareRegular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ACB326A9217DC67800BBAC32 /* NanumSquareRegular.ttf */; };
 		ACB326B0217DC7A900BBAC32 /* CheckListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB326AF217DC7A900BBAC32 /* CheckListViewController.swift */; };
-		ACB326B5217DC96400BBAC32 /* CheckListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB326B3217DC96400BBAC32 /* CheckListTableViewCell.swift */; };
-		ACB326B6217DC96400BBAC32 /* CheckListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACB326B4217DC96400BBAC32 /* CheckListTableViewCell.xib */; };
+		ACB326B5217DC96400BBAC32 /* BookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB326B3217DC96400BBAC32 /* BookTableViewCell.swift */; };
+		ACB326B6217DC96400BBAC32 /* BookTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACB326B4217DC96400BBAC32 /* BookTableViewCell.xib */; };
 		ACB326BA217DCDF800BBAC32 /* PageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB326B8217DCDF800BBAC32 /* PageCollectionViewCell.swift */; };
 		ACB326BB217DCDF800BBAC32 /* PageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACB326B9217DCDF800BBAC32 /* PageCollectionViewCell.xib */; };
 		ACC30BDD22376CE6009D5B88 /* SettingCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC30BDC22376CE6009D5B88 /* SettingCollectionReusableView.swift */; };
@@ -62,8 +62,8 @@
 		ACB326A8217DC67700BBAC32 /* NanumSquareBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareBold.ttf; sourceTree = "<group>"; };
 		ACB326A9217DC67800BBAC32 /* NanumSquareRegular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareRegular.ttf; sourceTree = "<group>"; };
 		ACB326AF217DC7A900BBAC32 /* CheckListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckListViewController.swift; sourceTree = "<group>"; };
-		ACB326B3217DC96400BBAC32 /* CheckListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckListTableViewCell.swift; sourceTree = "<group>"; };
-		ACB326B4217DC96400BBAC32 /* CheckListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckListTableViewCell.xib; sourceTree = "<group>"; };
+		ACB326B3217DC96400BBAC32 /* BookTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTableViewCell.swift; sourceTree = "<group>"; };
+		ACB326B4217DC96400BBAC32 /* BookTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookTableViewCell.xib; sourceTree = "<group>"; };
 		ACB326B8217DCDF800BBAC32 /* PageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageCollectionViewCell.swift; sourceTree = "<group>"; };
 		ACB326B9217DCDF800BBAC32 /* PageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PageCollectionViewCell.xib; sourceTree = "<group>"; };
 		ACC30BDC22376CE6009D5B88 /* SettingCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCollectionReusableView.swift; sourceTree = "<group>"; };
@@ -205,8 +205,8 @@
 		ACB326B2217DC93900BBAC32 /* TableViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				ACB326B3217DC96400BBAC32 /* CheckListTableViewCell.swift */,
-				ACB326B4217DC96400BBAC32 /* CheckListTableViewCell.xib */,
+				ACB326B3217DC96400BBAC32 /* BookTableViewCell.swift */,
+				ACB326B4217DC96400BBAC32 /* BookTableViewCell.xib */,
 				ACB326B7217DCDCA00BBAC32 /* CollectionViewCell */,
 			);
 			path = TableViewCell;
@@ -299,7 +299,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ACB326B6217DC96400BBAC32 /* CheckListTableViewCell.xib in Resources */,
+				ACB326B6217DC96400BBAC32 /* BookTableViewCell.xib in Resources */,
 				AC648EAB217CF41100377686 /* LaunchScreen.storyboard in Resources */,
 				ACB326AB217DC67800BBAC32 /* NanumSquareLight.ttf in Resources */,
 				ACB326AA217DC67800BBAC32 /* NanumSquareExtraBold.ttf in Resources */,
@@ -370,7 +370,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ACB326B5217DC96400BBAC32 /* CheckListTableViewCell.swift in Sources */,
+				ACB326B5217DC96400BBAC32 /* BookTableViewCell.swift in Sources */,
 				AC0443A7219113AD000313EB /* UIColor.swift in Sources */,
 				AC1E1C2321A3A09300B72AED /* Bible.swift in Sources */,
 				AC541281223B3E12008A155E /* SettingViewModel.swift in Sources */,
