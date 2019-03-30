@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class CheckListViewController: UIViewController {
+class BooksViewController: UIViewController {
     
     private var booksVM = BooksViewModel()
     
@@ -60,7 +60,7 @@ class CheckListViewController: UIViewController {
     }
 }
 
-extension CheckListViewController: UITableViewDelegate {
+extension BooksViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
@@ -113,13 +113,13 @@ extension CheckListViewController: UITableViewDelegate {
     }
 }
 
-extension CheckListViewController: SettingDelegate {
+extension BooksViewController: SettingDelegate {
     func settingsDone() {
         setupSegmentedControl()
     }
 }
 
-extension CheckListViewController {
+extension BooksViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "Setting" {
             prepareSegueForSettingViewController(segue: segue)

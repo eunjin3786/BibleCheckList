@@ -27,7 +27,7 @@
 		ACB326AB217DC67800BBAC32 /* NanumSquareLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ACB326A7217DC67600BBAC32 /* NanumSquareLight.ttf */; };
 		ACB326AC217DC67800BBAC32 /* NanumSquareBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ACB326A8217DC67700BBAC32 /* NanumSquareBold.ttf */; };
 		ACB326AD217DC67800BBAC32 /* NanumSquareRegular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ACB326A9217DC67800BBAC32 /* NanumSquareRegular.ttf */; };
-		ACB326B0217DC7A900BBAC32 /* CheckListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB326AF217DC7A900BBAC32 /* CheckListViewController.swift */; };
+		ACB326B0217DC7A900BBAC32 /* BooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB326AF217DC7A900BBAC32 /* BooksViewController.swift */; };
 		ACB326B5217DC96400BBAC32 /* BookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB326B3217DC96400BBAC32 /* BookTableViewCell.swift */; };
 		ACB326B6217DC96400BBAC32 /* BookTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACB326B4217DC96400BBAC32 /* BookTableViewCell.xib */; };
 		ACB326BA217DCDF800BBAC32 /* PageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB326B8217DCDF800BBAC32 /* PageCollectionViewCell.swift */; };
@@ -61,7 +61,7 @@
 		ACB326A7217DC67600BBAC32 /* NanumSquareLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareLight.ttf; sourceTree = "<group>"; };
 		ACB326A8217DC67700BBAC32 /* NanumSquareBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareBold.ttf; sourceTree = "<group>"; };
 		ACB326A9217DC67800BBAC32 /* NanumSquareRegular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareRegular.ttf; sourceTree = "<group>"; };
-		ACB326AF217DC7A900BBAC32 /* CheckListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckListViewController.swift; sourceTree = "<group>"; };
+		ACB326AF217DC7A900BBAC32 /* BooksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksViewController.swift; sourceTree = "<group>"; };
 		ACB326B3217DC96400BBAC32 /* BookTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTableViewCell.swift; sourceTree = "<group>"; };
 		ACB326B4217DC96400BBAC32 /* BookTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookTableViewCell.xib; sourceTree = "<group>"; };
 		ACB326B8217DCDF800BBAC32 /* PageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -196,7 +196,7 @@
 		ACB326B1217DC92E00BBAC32 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				ACB326AF217DC7A900BBAC32 /* CheckListViewController.swift */,
+				ACB326AF217DC7A900BBAC32 /* BooksViewController.swift */,
 				ACB326B2217DC93900BBAC32 /* TableViewCell */,
 			);
 			path = Home;
@@ -374,7 +374,7 @@
 				AC0443A7219113AD000313EB /* UIColor.swift in Sources */,
 				AC1E1C2321A3A09300B72AED /* Bible.swift in Sources */,
 				AC541281223B3E12008A155E /* SettingViewModel.swift in Sources */,
-				ACB326B0217DC7A900BBAC32 /* CheckListViewController.swift in Sources */,
+				ACB326B0217DC7A900BBAC32 /* BooksViewController.swift in Sources */,
 				AC541287223BD687008A155E /* BookViewModel.swift in Sources */,
 				ACB326BA217DCDF800BBAC32 /* PageCollectionViewCell.swift in Sources */,
 				AC541283223B4D6E008A155E /* SettingTitleViewModel.swift in Sources */,
