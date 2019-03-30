@@ -35,17 +35,7 @@
 
 RealmManager에 Realm관련 코드가 다 들어가있음. ViewModel들은 RealmManager안의 function들을 이용해야함
 
-![스크린샷 2019-03-30 오후 10 17 58](https://user-images.githubusercontent.com/9502063/55276682-c67f8d00-5339-11e9-8092-1e717b097d42.png)
-
-
-
-![스크린샷 2019-03-30 오후 9 35 31](https://user-images.githubusercontent.com/9502063/55276291-a948bf80-5335-11e9-8ee0-a122dd2e0009.png)
-
-
-
-![스크린샷 2019-03-30 오후 9 35 42](https://user-images.githubusercontent.com/9502063/55276317-ea40d400-5335-11e9-8ce2-898c73b949e7.png)
-
-
-
-
+![스크린샷 2019-03-30 오후 10 29 12](https://user-images.githubusercontent.com/9502063/55276821-90dba380-533b-11e9-9220-80b798f54756.png)
+![스크린샷 2019-03-30 오후 10 29 28](https://user-images.githubusercontent.com/9502063/55276824-92a56700-533b-11e9-8463-c6e45c7872db.png)
+![스크린샷 2019-03-30 오후 10 29 39](https://user-images.githubusercontent.com/9502063/55276829-976a1b00-533b-11e9-9f22-ba70e1f953f2.png)
 
