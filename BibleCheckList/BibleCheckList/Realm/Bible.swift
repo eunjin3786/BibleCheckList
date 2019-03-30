@@ -12,7 +12,7 @@ typealias BookTuple = (title: String, numOfpages: Int, category: Category)
 
 struct Bible {
     
-    static func getBibleInfoFromFile() -> [BookTuple]{
+    static func getBibleInfoFromFile() -> [BookTuple] {
         var bible:[BookTuple] = []
         
         if let path = Bundle.main.path(forResource: "category_type_1", ofType: "txt") {

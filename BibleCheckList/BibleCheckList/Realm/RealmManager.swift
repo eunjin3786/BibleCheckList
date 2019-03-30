@@ -40,7 +40,7 @@ class RealmManager {
     }
     
     
-    func getAllBooks()->[Book]{
+    func getAllBooks()->[Book] {
         
         var bookList:[Book] = []
         

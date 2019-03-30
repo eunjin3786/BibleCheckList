@@ -14,9 +14,9 @@ enum Category: String, CaseIterable{
     case new = "신약"
 }
 
-class PageObject:Object{
-    @objc dynamic var pageNumber:String = ""
-    @objc dynamic var isRead:Bool = false
+class PageObject: Object{
+    @objc dynamic var pageNumber: String = ""
+    @objc dynamic var isRead: Bool = false
     
     convenience init(pageNumber:String,isRead:Bool = false) {
         self.init()
