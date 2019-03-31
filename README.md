@@ -62,3 +62,8 @@
 
 VC에 Model과 interact하는 코드가 다 들어가있다 
 (ex-books 같은 데이터 / RealmManager와 소통하는 코드 ) 
+
+
+
+![스크린샷 2019-03-31 오후 2 34 02](https://user-images.githubusercontent.com/9502063/55285206-09854300-53c2-11e9-8d14-d0c23e4a60fc.png)
+
