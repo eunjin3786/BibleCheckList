@@ -22,7 +22,7 @@
 
 #### ✅ 성경 66권 읽어보자 :) 
 <a href="https://imgflip.com/gif/2n5uho"><img src="https://i.imgflip.com/2n5uho.gif" title="made at imgflip.com"/></a>
- 
+
 
 
 
@@ -41,12 +41,24 @@
     * PageObject(pageNumber와 isRead로 구성)의 배열
     * catergory (구약/신약 등) 
     * isDaily (Daily탭에 추가되었는지)
- 
+
 
 ## 개발 
 
 * tableviewCell xib 만들기 
   UI 
   * name
-  * totalPageCount만큼 collectionViewCell을 가진 collectionView 
+  * totalPageCount만큼 collectionViewCell을 가진 collectionView
 
+
+
+## 프로젝트 구성 ( MVC 패턴 )
+
+![스크린샷 2019-03-30 오후 10 29 12](https://user-images.githubusercontent.com/9502063/55285147-c7a7cd00-53c0-11e9-94ef-a67e180fa1cc.png)
+
+![스크린샷 2019-03-31 오후 2 26 03](https://user-images.githubusercontent.com/9502063/55285158-ec9c4000-53c0-11e9-8ca1-ed9768ce054a.png)
+
+
+
+VC에 Model과 interact하는 코드가 다 들어가있다 
+(ex-books 같은 데이터 / RealmManager와 소통하는 코드 ) 
