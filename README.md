@@ -39,3 +39,16 @@ RealmManager에 Realm관련 코드가 다 들어가있음. ViewModel들은 Realm
 ![스크린샷 2019-03-30 오후 10 29 28](https://user-images.githubusercontent.com/9502063/55276824-92a56700-533b-11e9-8463-c6e45c7872db.png)
 ![스크린샷 2019-03-30 오후 10 29 39](https://user-images.githubusercontent.com/9502063/55276829-976a1b00-533b-11e9-9f22-ba70e1f953f2.png)
 
+
+
+![스크린샷 2019-03-31 오후 2 35 17](https://user-images.githubusercontent.com/9502063/55285213-36d1f100-53c2-11e9-9f91-84757abe6989.png)
+
+
+
+### MVC -> MVVM 
+
+- VC가 Model과 소통하던 부분이 다 VM으로 빠지고 VC가 View로 들어가게 되면서 VC가 엄청 가벼워졌다. VC에는 View 관리하는 코드만 있어서 깔끔하다 
+- Model과 소통하는 부분, 특히 RealmManager을 사용하는 코드는 다 VM으로 들어가게 되어서 보기도, 관리하기도 엄청 편해졌다  (Realm을 사용하는 코드들을 한번에 볼 수 있는 것이 좋다)
+- VM을 보고 프로젝트에서 쓰이는 데이터 및 기능들을 파악하기 쉬운 것 같다 
+- Unit Testing이 좋다는 장점도 있는데, 해봐야겠다 : )  
+
