@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CheckListTableViewCell: UITableViewCell {
+class BookTableViewCell: UITableViewCell {
     
     var book = Book(){
         didSet{
@@ -73,7 +73,7 @@ class CheckListTableViewCell: UITableViewCell {
 }
 
 
-extension CheckListTableViewCell:UICollectionViewDataSource{
+extension BookTableViewCell:UICollectionViewDataSource{
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return book.pageList.count
@@ -93,7 +93,7 @@ extension CheckListTableViewCell:UICollectionViewDataSource{
     
 }
 
-extension CheckListTableViewCell:UICollectionViewDelegateFlowLayout{
+extension BookTableViewCell:UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = self.calculateWith()

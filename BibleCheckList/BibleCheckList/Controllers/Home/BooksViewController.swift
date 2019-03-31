@@ -35,7 +35,7 @@ class BooksViewController: UIViewController {
         tableView.estimatedRowHeight = 150
         tableView.rowHeight = UITableView.automaticDimension
         
-        tableView.register(UINib(nibName: "CheckListTableViewCell", bundle: nil), forCellReuseIdentifier: "CheckListTableViewCell")
+        tableView.register(UINib(nibName: "BookTableViewCell", bundle: nil), forCellReuseIdentifier: "BookTableViewCell")
     }
     
     private func setTableViewCells(books: [Book]){
@@ -59,7 +59,7 @@ extension BooksViewController:UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CheckListTableViewCell", for: indexPath) as! CheckListTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "BookTableViewCell", for: indexPath) as! BookTableViewCell
         cell.book = books[indexPath.row]
         return cell
     }
@@ -92,7 +92,7 @@ extension BooksViewController:UITableViewDelegate{
             let book = self.books[indexPath.row]
             RealmManager.shared.changeAllRead(title: book.title,isRead:true)
             
-            let cell = self.tableView.cellForRow(at: indexPath) as! CheckListTableViewCell
+            let cell = self.tableView.cellForRow(at: indexPath) as! BookTableViewCell
             cell.book = book
             cell.collectionView.reloadData()
             
@@ -111,7 +111,7 @@ extension BooksViewController:UITableViewDelegate{
             let book = self.books[indexPath.row]
             RealmManager.shared.changeAllRead(title: book.title,isRead:false)
             
-            let cell = self.tableView.cellForRow(at: indexPath) as! CheckListTableViewCell
+            let cell = self.tableView.cellForRow(at: indexPath) as! BookTableViewCell
             cell.book = book
             cell.collectionView.reloadData()
             
