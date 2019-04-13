@@ -35,6 +35,7 @@
 		ACC30BDD22376CE6009D5B88 /* SettingCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC30BDC22376CE6009D5B88 /* SettingCollectionReusableView.swift */; };
 		ACC30BE02237736E009D5B88 /* SettingTitleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC30BDF2237736E009D5B88 /* SettingTitleCollectionViewCell.swift */; };
 		ACEE4C35226220F000854333 /* BibleCheckListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEE4C34226220F000854333 /* BibleCheckListTests.swift */; };
+		ACEE4C3F2262226A00854333 /* SettingViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEE4C3E2262226A00854333 /* SettingViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,7 @@
 		ACEE4C32226220EF00854333 /* BibleCheckListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BibleCheckListTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACEE4C34226220F000854333 /* BibleCheckListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BibleCheckListTests.swift; sourceTree = "<group>"; };
 		ACEE4C36226220F000854333 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ACEE4C3E2262226A00854333 /* SettingViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -258,6 +260,7 @@
 			children = (
 				ACEE4C34226220F000854333 /* BibleCheckListTests.swift */,
 				ACEE4C36226220F000854333 /* Info.plist */,
+				ACEE4C3E2262226A00854333 /* SettingViewModelTests.swift */,
 			);
 			path = BibleCheckListTests;
 			sourceTree = "<group>";
@@ -456,6 +459,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACEE4C35226220F000854333 /* BibleCheckListTests.swift in Sources */,
+				ACEE4C3F2262226A00854333 /* SettingViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
