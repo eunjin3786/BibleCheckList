@@ -34,7 +34,18 @@
 		ACB326BB217DCDF800BBAC32 /* PageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACB326B9217DCDF800BBAC32 /* PageCollectionViewCell.xib */; };
 		ACC30BDD22376CE6009D5B88 /* SettingCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC30BDC22376CE6009D5B88 /* SettingCollectionReusableView.swift */; };
 		ACC30BE02237736E009D5B88 /* SettingTitleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC30BDF2237736E009D5B88 /* SettingTitleCollectionViewCell.swift */; };
+		ACEE4C35226220F000854333 /* BibleCheckListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEE4C34226220F000854333 /* BibleCheckListTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		ACEE4C37226220F000854333 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AC648E95217CF40D00377686 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AC648E9C217CF40D00377686;
+			remoteInfo = BibleCheckList;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		102D23F980CB468797CA582F /* Pods_BibleCheckList.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BibleCheckList.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -68,6 +79,9 @@
 		ACB326B9217DCDF800BBAC32 /* PageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PageCollectionViewCell.xib; sourceTree = "<group>"; };
 		ACC30BDC22376CE6009D5B88 /* SettingCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCollectionReusableView.swift; sourceTree = "<group>"; };
 		ACC30BDF2237736E009D5B88 /* SettingTitleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTitleCollectionViewCell.swift; sourceTree = "<group>"; };
+		ACEE4C32226220EF00854333 /* BibleCheckListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BibleCheckListTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		ACEE4C34226220F000854333 /* BibleCheckListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BibleCheckListTests.swift; sourceTree = "<group>"; };
+		ACEE4C36226220F000854333 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +90,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				16BAED64290360CBA15C6298 /* Pods_BibleCheckList.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ACEE4C2F226220EF00854333 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				AC648E9F217CF40D00377686 /* BibleCheckList */,
+				ACEE4C33226220F000854333 /* BibleCheckListTests */,
 				AC648E9E217CF40D00377686 /* Products */,
 				AE3691AF70D03B6D6CB38374 /* Pods */,
 				A740531B796E1A95C3CD9331 /* Frameworks */,
@@ -135,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				AC648E9D217CF40D00377686 /* BibleCheckList.app */,
+				ACEE4C32226220EF00854333 /* BibleCheckListTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -230,6 +253,15 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		ACEE4C33226220F000854333 /* BibleCheckListTests */ = {
+			isa = PBXGroup;
+			children = (
+				ACEE4C34226220F000854333 /* BibleCheckListTests.swift */,
+				ACEE4C36226220F000854333 /* Info.plist */,
+			);
+			path = BibleCheckListTests;
+			sourceTree = "<group>";
+		};
 		AE3691AF70D03B6D6CB38374 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -261,18 +293,40 @@
 			productReference = AC648E9D217CF40D00377686 /* BibleCheckList.app */;
 			productType = "com.apple.product-type.application";
 		};
+		ACEE4C31226220EF00854333 /* BibleCheckListTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ACEE4C3B226220F000854333 /* Build configuration list for PBXNativeTarget "BibleCheckListTests" */;
+			buildPhases = (
+				ACEE4C2E226220EF00854333 /* Sources */,
+				ACEE4C2F226220EF00854333 /* Frameworks */,
+				ACEE4C30226220EF00854333 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ACEE4C38226220F000854333 /* PBXTargetDependency */,
+			);
+			name = BibleCheckListTests;
+			productName = BibleCheckListTests;
+			productReference = ACEE4C32226220EF00854333 /* BibleCheckListTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		AC648E95217CF40D00377686 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1000;
+				LastSwiftUpdateCheck = 1020;
 				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = eunjin;
 				TargetAttributes = {
 					AC648E9C217CF40D00377686 = {
 						CreatedOnToolsVersion = 10.0;
+					};
+					ACEE4C31226220EF00854333 = {
+						CreatedOnToolsVersion = 10.2;
+						TestTargetID = AC648E9C217CF40D00377686;
 					};
 				};
 			};
@@ -290,6 +344,7 @@
 			projectRoot = "";
 			targets = (
 				AC648E9C217CF40D00377686 /* BibleCheckList */,
+				ACEE4C31226220EF00854333 /* BibleCheckListTests */,
 			);
 		};
 /* End PBXProject section */
@@ -309,6 +364,13 @@
 				ACB326AC217DC67800BBAC32 /* NanumSquareBold.ttf in Resources */,
 				AC648EA6217CF40D00377686 /* Main.storyboard in Resources */,
 				AC6DE1FE21A1CC9500DFD55B /* category_type_1.txt in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ACEE4C30226220EF00854333 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -389,7 +451,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		ACEE4C2E226220EF00854333 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ACEE4C35226220F000854333 /* BibleCheckListTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		ACEE4C38226220F000854333 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AC648E9C217CF40D00377686 /* BibleCheckList */;
+			targetProxy = ACEE4C37226220F000854333 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		AC648EA4217CF40D00377686 /* Main.storyboard */ = {
@@ -571,6 +649,48 @@
 			};
 			name = Release;
 		};
+		ACEE4C39226220F000854333 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6C4YL9RLK7;
+				INFOPLIST_FILE = BibleCheckListTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.eunjin.BibleCheckListTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BibleCheckList.app/BibleCheckList";
+			};
+			name = Debug;
+		};
+		ACEE4C3A226220F000854333 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6C4YL9RLK7;
+				INFOPLIST_FILE = BibleCheckListTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.eunjin.BibleCheckListTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BibleCheckList.app/BibleCheckList";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -588,6 +708,15 @@
 			buildConfigurations = (
 				AC648EB0217CF41100377686 /* Debug */,
 				AC648EB1217CF41100377686 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ACEE4C3B226220F000854333 /* Build configuration list for PBXNativeTarget "BibleCheckListTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ACEE4C39226220F000854333 /* Debug */,
+				ACEE4C3A226220F000854333 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
