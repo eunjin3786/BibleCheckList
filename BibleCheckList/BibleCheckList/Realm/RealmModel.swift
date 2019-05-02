@@ -9,7 +9,7 @@
 import Foundation
 import RealmSwift
 
-enum Category: String, CaseIterable{
+enum Category: String, CaseIterable {
     case old = "구약"
     case new = "신약"
 }
