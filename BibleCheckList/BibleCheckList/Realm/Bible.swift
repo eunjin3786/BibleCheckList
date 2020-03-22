@@ -13,7 +13,7 @@ typealias BookTuple = (title: String, numOfPages: Int, category: Category)
 struct Bible {
     
     static func getBibleInfoFromFile() -> [BookTuple] {
-        var bible:[BookTuple] = []
+        var bible: [BookTuple] = []
         
         if let path = Bundle.main.path(forResource: "category_type_1", ofType: "txt") {
             do {
@@ -23,7 +23,7 @@ struct Bible {
                 guard let newIndex:Int = myStrings.firstIndex(of: "신약 ") else {return []}
                 
                 
-                for (index,item) in myStrings.enumerated(){
+                for (index,item) in myStrings.enumerated() {
                     
                     guard let title = item.getArrayAfterRegex(regex: "[ㄱ-ㅎㅏ-ㅣ가-힣0-9]+()").first else { continue }
                     

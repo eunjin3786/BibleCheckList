@@ -16,8 +16,8 @@ class PageCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
     }
     
-    func toggle(isRead: Bool){
-        if isRead{
+    func toggle(isRead: Bool) {
+        if isRead {
             self.backgroundColor = UIColor.darkYellow
         } else {
             self.backgroundColor = UIColor.whiteGray

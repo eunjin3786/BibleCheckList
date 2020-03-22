@@ -19,7 +19,7 @@ class RealmManager {
         bible.forEach { addBook($0) }
     }
     
-    private func addBook(_ bookTuple: BookTuple){
+    private func addBook(_ bookTuple: BookTuple) {
         
         let book = Book()
         book.title = bookTuple.title
@@ -38,8 +38,7 @@ class RealmManager {
         book.add()
     }
     
-    
-    func getAllBooks()->[Book] {
+    func getAllBooks() -> [Book] {
         
         var bookList:  [Book] = []
         
@@ -56,14 +55,14 @@ class RealmManager {
         return bookList
     }
     
-    func getBooksOfCategory(category: String)->[Book]{
+    func getBooksOfCategory(category: String)-> [Book] {
         
         var bookList:[Book] = []
         
         do {
             let realm = try Realm()
-            let books = realm.objects(Book.self).filter{$0.category == category}
-            bookList = books.map{$0}
+            let books = realm.objects(Book.self).filter { $0.category == category }
+            bookList = books.map { $0 }
             
         } catch let error as NSError {
             print(error.localizedDescription)
@@ -73,12 +72,11 @@ class RealmManager {
         
     }
     
-    
-    func getBook(title:String)->Book?{
+    func getBook(title:String) -> Book? {
         
         do{
             let realm = try Realm()
-            let book = realm.objects(Book.self).filter{ $0.title == title }.first
+            let book = realm.objects(Book.self).filter { $0.title == title }.first
             return book
         } catch let error as NSError {
             print(error.localizedDescription)

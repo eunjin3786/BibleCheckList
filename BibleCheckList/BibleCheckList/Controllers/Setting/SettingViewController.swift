@@ -11,7 +11,7 @@ import RxSwift
 import RxCocoa
 import RxDataSources
 
-protocol SettingDelegate{
+protocol SettingDelegate {
     func settingsDone()
 }
 
@@ -41,7 +41,8 @@ class SettingViewController: UIViewController {
     
     private func bindCollectionView() {
         let sections = settingVM.categories.map {
-            return SettingSectionModel(model: $0.rawValue, items: settingVM.categoryBooks(for: $0.rawValue))
+            return SettingSectionModel(model: $0.rawValue,
+                                       items: settingVM.categoryBooks(for: $0.rawValue))
         }
         Observable.just(sections)
             .bind(to: collectionView.rx.items(dataSource: settingDatasource))
@@ -57,7 +58,7 @@ class SettingViewController: UIViewController {
             return cell
         })
         datasource.configureSupplementaryView = { (datasource, collectionView, kind, indexPath) in
-            if let sectionHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "SettingCollectionReusableView", for: indexPath) as? SettingCollectionReusableView{
+            if let sectionHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "SettingCollectionReusableView", for: indexPath) as? SettingCollectionReusableView {
                 sectionHeader.titleLabel.text = self.settingVM.categories[indexPath.section].rawValue
                 return sectionHeader
             }
