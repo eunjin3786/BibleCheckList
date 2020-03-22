@@ -72,7 +72,6 @@ extension BooksViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
         let clear = clearAction(at:indexPath)
-        //let send = sendAction(at: indexPath)
         return UISwipeActionsConfiguration(actions: [clear])
     }
     
@@ -80,7 +79,7 @@ extension BooksViewController: UITableViewDelegate {
         
         let action = UIContextualAction(style: .normal, title: "") { [weak self] (action, view, completion) in
             
-            guard let `self` = self else{return}
+            guard let `self` = self else { return }
             let book = self.booksVM.books.value[indexPath.row]
             let bookVM = BookViewModel(book: book)
             bookVM.changeAllRead(isRead: true)

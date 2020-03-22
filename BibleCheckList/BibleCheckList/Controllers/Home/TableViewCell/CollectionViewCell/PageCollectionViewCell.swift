@@ -14,7 +14,6 @@ class PageCollectionViewCell: UICollectionViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
     
     func toggle(isRead: Bool){

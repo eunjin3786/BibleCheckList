@@ -3,13 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		16BAED64290360CBA15C6298 /* Pods_BibleCheckList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 102D23F980CB468797CA582F /* Pods_BibleCheckList.framework */; };
 		AC0443A421904E64000313EB /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0443A321904E64000313EB /* RealmManager.swift */; };
-		AC0443A7219113AD000313EB /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0443A6219113AD000313EB /* UIColor.swift */; };
+		AC0443A7219113AD000313EB /* UIColor+BibleCheckList.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0443A6219113AD000313EB /* UIColor+BibleCheckList.swift */; };
 		AC1E1C2321A3A09300B72AED /* Bible.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1E1C2221A3A09300B72AED /* Bible.swift */; };
 		AC541281223B3E12008A155E /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC541280223B3E12008A155E /* SettingViewModel.swift */; };
 		AC541283223B4D6E008A155E /* SettingTitleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC541282223B4D6E008A155E /* SettingTitleViewModel.swift */; };
@@ -21,7 +21,7 @@
 		AC648EAB217CF41100377686 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC648EA9217CF41100377686 /* LaunchScreen.storyboard */; };
 		AC648EB4217D946B00377686 /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC648EB3217D946B00377686 /* RealmModel.swift */; };
 		AC6DE1FE21A1CC9500DFD55B /* category_type_1.txt in Resources */ = {isa = PBXBuildFile; fileRef = AC6DE1FD21A1CC9500DFD55B /* category_type_1.txt */; };
-		AC6DE20121A1CD2D00DFD55B /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6DE20021A1CD2D00DFD55B /* String.swift */; };
+		AC6DE20121A1CD2D00DFD55B /* String+BibleCheckList.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6DE20021A1CD2D00DFD55B /* String+BibleCheckList.swift */; };
 		ACACFEF5222FC6CA002C27DB /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACACFEF4222FC6CA002C27DB /* SettingViewController.swift */; };
 		ACB326AA217DC67800BBAC32 /* NanumSquareExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ACB326A6217DC67600BBAC32 /* NanumSquareExtraBold.ttf */; };
 		ACB326AB217DC67800BBAC32 /* NanumSquareLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ACB326A7217DC67600BBAC32 /* NanumSquareLight.ttf */; };
@@ -34,7 +34,6 @@
 		ACB326BB217DCDF800BBAC32 /* PageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACB326B9217DCDF800BBAC32 /* PageCollectionViewCell.xib */; };
 		ACC30BDD22376CE6009D5B88 /* SettingCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC30BDC22376CE6009D5B88 /* SettingCollectionReusableView.swift */; };
 		ACC30BE02237736E009D5B88 /* SettingTitleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC30BDF2237736E009D5B88 /* SettingTitleCollectionViewCell.swift */; };
-		ACEE4C35226220F000854333 /* BibleCheckListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEE4C34226220F000854333 /* BibleCheckListTests.swift */; };
 		ACEE4C3F2262226A00854333 /* SettingViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEE4C3E2262226A00854333 /* SettingViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -53,7 +52,7 @@
 		4B88AD719E9D0D0F9210D8A5 /* Pods-BibleCheckList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BibleCheckList.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BibleCheckList/Pods-BibleCheckList.debug.xcconfig"; sourceTree = "<group>"; };
 		56E0D96AC03063F00AA2E47F /* Pods-BibleCheckList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BibleCheckList.release.xcconfig"; path = "Pods/Target Support Files/Pods-BibleCheckList/Pods-BibleCheckList.release.xcconfig"; sourceTree = "<group>"; };
 		AC0443A321904E64000313EB /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
-		AC0443A6219113AD000313EB /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		AC0443A6219113AD000313EB /* UIColor+BibleCheckList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+BibleCheckList.swift"; sourceTree = "<group>"; };
 		AC1E1C2221A3A09300B72AED /* Bible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bible.swift; sourceTree = "<group>"; };
 		AC541280223B3E12008A155E /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
 		AC541282223B4D6E008A155E /* SettingTitleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTitleViewModel.swift; sourceTree = "<group>"; };
@@ -67,7 +66,7 @@
 		AC648EAC217CF41100377686 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC648EB3217D946B00377686 /* RealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmModel.swift; sourceTree = "<group>"; };
 		AC6DE1FD21A1CC9500DFD55B /* category_type_1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = category_type_1.txt; sourceTree = "<group>"; };
-		AC6DE20021A1CD2D00DFD55B /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		AC6DE20021A1CD2D00DFD55B /* String+BibleCheckList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+BibleCheckList.swift"; sourceTree = "<group>"; };
 		ACACFEF4222FC6CA002C27DB /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		ACB326A6217DC67600BBAC32 /* NanumSquareExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareExtraBold.ttf; sourceTree = "<group>"; };
 		ACB326A7217DC67600BBAC32 /* NanumSquareLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareLight.ttf; sourceTree = "<group>"; };
@@ -81,7 +80,6 @@
 		ACC30BDC22376CE6009D5B88 /* SettingCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCollectionReusableView.swift; sourceTree = "<group>"; };
 		ACC30BDF2237736E009D5B88 /* SettingTitleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTitleCollectionViewCell.swift; sourceTree = "<group>"; };
 		ACEE4C32226220EF00854333 /* BibleCheckListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BibleCheckListTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		ACEE4C34226220F000854333 /* BibleCheckListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BibleCheckListTests.swift; sourceTree = "<group>"; };
 		ACEE4C36226220F000854333 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ACEE4C3E2262226A00854333 /* SettingViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -126,9 +124,9 @@
 		AC0443A521911362000313EB /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				ACB326A5217DC65A00BBAC32 /* Fonts */,
 				AC6DE1FD21A1CC9500DFD55B /* category_type_1.txt */,
 				AC648EA7217CF41100377686 /* Assets.xcassets */,
-				ACB326A5217DC65A00BBAC32 /* Fonts */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -183,8 +181,8 @@
 		AC6DE1FF21A1CD1200DFD55B /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				AC0443A6219113AD000313EB /* UIColor.swift */,
-				AC6DE20021A1CD2D00DFD55B /* String.swift */,
+				AC0443A6219113AD000313EB /* UIColor+BibleCheckList.swift */,
+				AC6DE20021A1CD2D00DFD55B /* String+BibleCheckList.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -258,9 +256,8 @@
 		ACEE4C33226220F000854333 /* BibleCheckListTests */ = {
 			isa = PBXGroup;
 			children = (
-				ACEE4C34226220F000854333 /* BibleCheckListTests.swift */,
-				ACEE4C36226220F000854333 /* Info.plist */,
 				ACEE4C3E2262226A00854333 /* SettingViewModelTests.swift */,
+				ACEE4C36226220F000854333 /* Info.plist */,
 			);
 			path = BibleCheckListTests;
 			sourceTree = "<group>";
@@ -403,29 +400,16 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-BibleCheckList/Pods-BibleCheckList-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework",
-				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
-				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
-				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
-				"${BUILT_PRODUCTS_DIR}/RxDataSources/RxDataSources.framework",
-				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BibleCheckList/Pods-BibleCheckList-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differentiator.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxDataSources.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BibleCheckList/Pods-BibleCheckList-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BibleCheckList/Pods-BibleCheckList-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BibleCheckList/Pods-BibleCheckList-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -436,7 +420,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACB326B5217DC96400BBAC32 /* BookTableViewCell.swift in Sources */,
-				AC0443A7219113AD000313EB /* UIColor.swift in Sources */,
+				AC0443A7219113AD000313EB /* UIColor+BibleCheckList.swift in Sources */,
 				AC1E1C2321A3A09300B72AED /* Bible.swift in Sources */,
 				AC541281223B3E12008A155E /* SettingViewModel.swift in Sources */,
 				ACB326B0217DC7A900BBAC32 /* BooksViewController.swift in Sources */,
@@ -448,7 +432,7 @@
 				AC648EB4217D946B00377686 /* RealmModel.swift in Sources */,
 				AC0443A421904E64000313EB /* RealmManager.swift in Sources */,
 				ACC30BDD22376CE6009D5B88 /* SettingCollectionReusableView.swift in Sources */,
-				AC6DE20121A1CD2D00DFD55B /* String.swift in Sources */,
+				AC6DE20121A1CD2D00DFD55B /* String+BibleCheckList.swift in Sources */,
 				AC541285223BCC04008A155E /* BooksViewModel.swift in Sources */,
 				AC648EA1217CF40D00377686 /* AppDelegate.swift in Sources */,
 			);
@@ -458,7 +442,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ACEE4C35226220F000854333 /* BibleCheckListTests.swift in Sources */,
 				ACEE4C3F2262226A00854333 /* SettingViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

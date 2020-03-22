@@ -14,7 +14,7 @@ enum Category: String, CaseIterable {
     case new = "신약"
 }
 
-class PageObject: Object{
+class PageObject: Object {
     @objc dynamic var pageNumber: String = ""
     @objc dynamic var isRead: Bool = false
     
@@ -43,7 +43,7 @@ class Book: Object {
         }
     }
     
-    func delete(){
+    func delete() {
         do {
             let realm = try Realm()
             try realm.write {

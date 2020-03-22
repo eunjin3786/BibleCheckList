@@ -7,7 +7,6 @@
 //
 
 import XCTest
-// 테스트 목적으로 BibleCheckList안에 있는 모든 것을 쓸거야 --!
 @testable import BibleCheckList
 
 class SettingViewModelTests: XCTestCase {
@@ -17,9 +16,7 @@ class SettingViewModelTests: XCTestCase {
         super.setUp()
         settingVM = SettingViewModel()
     }
-    
-    // test independent 위해 아무것도 남기지 않는다
-    // 각각의 테스트가 끝날때 마다 클린업된다
+
     override func tearDown() {
         super.tearDown()
     }

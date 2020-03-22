@@ -11,17 +11,23 @@ import UIKit
 class SettingTitleCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var titleLabel: UILabel!
-    private var isToggle = false
+    private var isToggled = false
     private var settingTitleVM: SettingTitleViewModel?
     
     func toggle() {
-        isToggle = !isToggle
-        setupToggleColor(isToggle: isToggle)
-        settingTitleVM?.changeIsDaily(on: isToggle)
+        isToggled = !isToggled
+        setupToggleColor(isToggled: isToggled)
+        settingTitleVM?.changeIsDaily(on: isToggled)
     }
     
-    private func setupToggleColor(isToggle: Bool) {
-        if isToggle {
+    func configure(vm: SettingTitleViewModel) {
+        settingTitleVM = vm
+        titleLabel.text = vm.book.title
+        setupToggleColor(isToggled: vm.book.isDaily)
+    }
+    
+    private func setupToggleColor(isToggled: Bool) {
+        if isToggled {
             backgroundColor = .darkYellow
             layer.borderWidth = 0
         } else {
@@ -30,11 +36,5 @@ class SettingTitleCollectionViewCell: UICollectionViewCell {
             layer.borderWidth = 1
             layer.borderColor = UIColor.darkYellow.cgColor
         }
-    }
-    
-    func configure(vm: SettingTitleViewModel) {
-        settingTitleVM = vm
-        titleLabel.text = vm.book.title
-        setupToggleColor(isToggle: vm.book.isDaily)
     }
 }

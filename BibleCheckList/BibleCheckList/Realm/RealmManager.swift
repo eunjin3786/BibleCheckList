@@ -13,19 +13,18 @@ class RealmManager {
     
     static let shared = RealmManager()
     
-    private init(){
+    private init() {
         if !getAllBooks().isEmpty { return }
         let bible = Bible.getBibleInfoFromFile()
-        bible.forEach{ addBook($0) }
+        bible.forEach { addBook($0) }
     }
     
     private func addBook(_ bookTuple: BookTuple){
         
-        //db에 추가
         let book = Book()
         book.title = bookTuple.title
         
-        for i in 1...bookTuple.numOfpages{
+        for i in 1...bookTuple.numOfPages {
             let pageObject = PageObject(pageNumber: String(i))
             book.pageList.append(pageObject)
         }
@@ -42,12 +41,12 @@ class RealmManager {
     
     func getAllBooks()->[Book] {
         
-        var bookList:[Book] = []
+        var bookList:  [Book] = []
         
         do {
             let realm = try Realm()
             let results = realm.objects(Book.self)
-            //Results<Book> 타입
+            // Type: Results<Book>
             bookList = results.map{$0}
             
         } catch let error as NSError {
@@ -79,7 +78,7 @@ class RealmManager {
         
         do{
             let realm = try Realm()
-            let book = realm.objects(Book.self).filter{$0.title == title}.first
+            let book = realm.objects(Book.self).filter{ $0.title == title }.first
             return book
         } catch let error as NSError {
             print(error.localizedDescription)
@@ -92,9 +91,9 @@ class RealmManager {
         
         do{
             let realm = try Realm()
-            let book = realm.objects(Book.self).filter{$0.title == title}.first
+            let book = realm.objects(Book.self).filter{ $0.title == title }.first
             try realm.write {
-                let page = book?.pageList.filter{$0.pageNumber == pageNumber}.first
+                let page = book?.pageList.filter{ $0.pageNumber == pageNumber }.first
                 page?.isRead = isRead
             }
         } catch let error as NSError {
@@ -105,7 +104,7 @@ class RealmManager {
     func changeAllRead(title:String,isRead:Bool){
         do{
             let realm = try Realm()
-            let book = realm.objects(Book.self).filter{$0.title == title}.first
+            let book = realm.objects(Book.self).filter{ $0.title == title }.first
             try realm.write {
 
                 if let pageList = book?.pageList{
@@ -121,9 +120,9 @@ class RealmManager {
     }
     
     func changeDaily(title: String, isDaily: Bool) {
-        do{
+        do {
             let realm = try Realm()
-            let book = realm.objects(Book.self).filter{$0.title == title}.first
+            let book = realm.objects(Book.self).filter{ $0.title == title }.first
             try realm.write {
                 book?.isDaily = isDaily
             }

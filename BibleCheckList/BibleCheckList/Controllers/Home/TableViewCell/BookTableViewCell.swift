@@ -19,7 +19,7 @@ class BookTableViewCell: UITableViewCell {
     private var estimateWidth = 35.0
     private var cellMarginSize = 3.0
     
-    private func calculateWith() -> CGFloat {
+    private func calculateWidth() -> CGFloat {
         let estimatedWidth = CGFloat(estimateWidth)
         let cellCount = floor(CGFloat(collectionView.frame.size.width / estimatedWidth))
         
@@ -81,7 +81,7 @@ extension BookTableViewCell:UICollectionViewDataSource{
 extension BookTableViewCell:UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = self.calculateWith()
+        let width = self.calculateWidth()
         return CGSize(width: width, height: width)
     }
     
